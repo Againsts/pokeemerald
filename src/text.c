@@ -128,6 +128,9 @@ extern const u16 gFont0JapaneseGlyphs[];
 extern const u16 gFont1JapaneseGlyphs[];
 extern const u16 gFont2JapaneseGlyphs[];
 extern const u8 gFont2JapaneseGlyphWidths[];
+//Add chinese Entries
+extern const u16 gFont0ChineseGlyphs[];
+extern const u16 gFont1ChineseGlyphs[];
 
 void SetFontsPointer(const struct FontInfo *fonts)
 {
@@ -1645,6 +1648,148 @@ u16 RenderText(struct TextPrinter *textPrinter)
             return 0;
         case EOS:
             return 1;
+			
+		//Add Chinese Char consideration
+		case 0x01:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1000;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x02:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1100;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x03:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1200;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x04:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1300;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x05:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1400;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x07:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1500;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x08:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1600;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x09:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1700;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x0A:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1800;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x0B:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1900;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x0C:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1A00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x0D:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1B00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x0E:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1C00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x0F:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1D00;
+            textPrinter->printerTemplate.currentChar++;
+             break;
+			
+		case 0x10:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1E00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x11:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x1F00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x12:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2000;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x13:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2100;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x14:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2200;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x15:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2300;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x16:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2400;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x17:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2500;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x18:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2600;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x19:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2700;
+            textPrinter->printerTemplate.currentChar++;
+             break;
+			
+		case 0x1A:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2800;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x1C:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2900;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x1D:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2A00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+			
+		case 0x1E:
+            currChar = *textPrinter->printerTemplate.currentChar | 0x2B00;
+            textPrinter->printerTemplate.currentChar++;
+            break;
+		//End of Chinese Char consideration
         }
 
         switch (subStruct->glyphId)
@@ -2225,8 +2370,16 @@ void DecompressGlyphFont0(u16 glyphId, bool32 isJapanese)
     }
     else
     {
+		if (glyphId >= 0x1000)	//Chinese
+		{
+			glyphs = gFont0ChineseGlyphs + (0x20 * (glyphId-0x1000));
+			gUnknown_03002F90.unk80 = 10;
+		}
+		else
+		{
         glyphs = gFont0LatinGlyphs + (0x20 * glyphId);
         gUnknown_03002F90.unk80 = gFont0LatinGlyphWidths[glyphId];
+		}
 
         if (gUnknown_03002F90.unk80 <= 8)
         {
@@ -2268,9 +2421,17 @@ void DecompressGlyphFont7(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        glyphs = gFont7LatinGlyphs + (0x20 * glyphId);
-        gUnknown_03002F90.unk80 = gFont7LatinGlyphWidths[glyphId];
-
+		if (glyphId >= 0x1000)	//Chinese
+		{
+			glyphs = gFont0ChineseGlyphs + (0x20 * (glyphId-0x1000));
+			gUnknown_03002F90.unk80 = 10;
+		}
+		else
+		{	
+			glyphs = gFont7LatinGlyphs + (0x20 * glyphId);
+			gUnknown_03002F90.unk80 = gFont7LatinGlyphWidths[glyphId];
+		}
+		
         if (gUnknown_03002F90.unk80 <= 8)
         {
             DecompressGlyphTile(glyphs, gUnknown_03002F90.unk0);
@@ -2310,9 +2471,17 @@ void DecompressGlyphFont8(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        glyphs = gFont8LatinGlyphs + (0x20 * glyphId);
-        gUnknown_03002F90.unk80 = gFont8LatinGlyphWidths[glyphId];
-
+		if (glyphId >= 0x1000)	//Chinese
+		{
+			glyphs = gFont0ChineseGlyphs + (0x20 * (glyphId-0x1000));
+			gUnknown_03002F90.unk80 = 10;
+		}
+		else
+		{
+			glyphs = gFont8LatinGlyphs + (0x20 * glyphId);
+			gUnknown_03002F90.unk80 = gFont8LatinGlyphWidths[glyphId];
+		}
+	
         if (gUnknown_03002F90.unk80 <= 8)
         {
             DecompressGlyphTile(glyphs, gUnknown_03002F90.unk0);
@@ -2354,8 +2523,16 @@ void DecompressGlyphFont2(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        glyphs = gFont2LatinGlyphs + (0x20 * glyphId);
-        gUnknown_03002F90.unk80 = gFont2LatinGlyphWidths[glyphId];
+		if (glyphId >= 0x1000)	//Chinese
+		{
+			glyphs = gFont1ChineseGlyphs + (0x20 * (glyphId-0x1000));
+			gUnknown_03002F90.unk80 = 12;
+		}
+		else
+		{
+			glyphs = gFont2LatinGlyphs + (0x20 * glyphId);
+			gUnknown_03002F90.unk80 = gFont2LatinGlyphWidths[glyphId];
+		}
 
         if (gUnknown_03002F90.unk80 <= 8)
         {
@@ -2397,9 +2574,17 @@ void DecompressGlyphFont1(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        glyphs = gFont1LatinGlyphs + (0x20 * glyphId);
-        gUnknown_03002F90.unk80 = gFont1LatinGlyphWidths[glyphId];
-
+			if (glyphId >= 0x1000)	//Chinese
+		{
+			glyphs = gFont1ChineseGlyphs + (0x20 * (glyphId-0x1000));
+			gUnknown_03002F90.unk80 = 12;
+		}
+		else
+		{
+			glyphs = gFont1LatinGlyphs + (0x20 * glyphId);
+			gUnknown_03002F90.unk80 = gFont1LatinGlyphWidths[glyphId];
+		}
+		
         if (gUnknown_03002F90.unk80 <= 8)
         {
             DecompressGlyphTile(glyphs, gUnknown_03002F90.unk0);
