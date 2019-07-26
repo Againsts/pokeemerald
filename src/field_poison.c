@@ -130,8 +130,8 @@ s32 DoPoisonFieldEffect(void)
             {
                 numFainted++;
             }
-            SetMonData(pokemon, MON_DATA_HP, &hp);
-            numPoisoned++;
+            //SetMonData(pokemon, MON_DATA_HP, &hp);
+            //numPoisoned++;
         }
         pokemon++;
     }
