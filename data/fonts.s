@@ -74,3 +74,14 @@ gFont2JapaneseGlyphs:: @ 866C8E4
 	.align 2
 gFont2JapaneseGlyphWidths:: @ 86748E4
 	.include "data/graphics/fonts/font2_japanese_widths.inc"
+
+	.align 2
+gFont0ChineseGlyphs:: @ Add Chinese Char
+	.incbin "data/graphics/fonts/font0_chinese.bin"
+
+	.align 2
+gFont1ChineseGlyphs:: @ Add Chinese Char
+	.incbin "data/graphics/fonts/font1_chinese.bin"
+
+
+
