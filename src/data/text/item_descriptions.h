@@ -2238,3 +2238,9 @@ static const u8 sSwiftWingDesc[] = _(
 static const u8 sPrettyWingDesc[] = _(
     "仅仅只是漂亮,没有任何效果,极其\n"
     "普通的羽毛。");
+	
+//SW&SB changes
+static const u8 sShinyCharmDesc[] = _(
+    "拥有它之后,\n"
+	"据说会更容易遇见发光宝可梦\n"
+	"的神奇闪光护符。");

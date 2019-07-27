@@ -2403,6 +2403,30 @@ void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFix
     CalculateMonStats(mon);
 }
 
+static u32 CheckShinyMon(u32 pid) 
+{
+	u16 chance = 1;	//Default 1/4096 rate
+
+	if (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0)
+		chance = 3;
+		
+	if (FlagGet(SHINY_CREATION_FLAG))
+		chance = 4097;
+
+	if (Random() % 4097 < chance)		//Nominal 1/4096
+	{
+		// make shiny
+		u8 shinyRange = Random() % 8;
+
+		u32 playerId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
+		u16 sid = HIHALF(playerId);
+		u16 tid = LOHALF(playerId);
+		pid = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(pid)) << 16) | LOHALF(pid);
+	}
+	
+	return pid;
+};
+
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
@@ -2416,7 +2440,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         personality = fixedPersonality;
     else
         personality = Random32();
-
+	
+	personality = CheckShinyMon(personality);
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
 
     //Determine original trainer ID

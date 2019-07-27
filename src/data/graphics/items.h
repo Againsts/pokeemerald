@@ -1514,3 +1514,7 @@ const u32 gItemIconPalette_SwiftWing[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_PrettyWing[] = INCBIN_U32("graphics/items/icons/pretty_wing.4bpp.lz");
 const u32 gItemIconPalette_PrettyWing[] = INCBIN_U32("graphics/items/icon_palettes/pretty_wing.gbapal.lz");
+
+const u32 gItemIcon_ShinyCharm[] = INCBIN_U32("graphics/items/icons/Shiny_Charm.4bpp.lz");
+const u32 gItemIconPalette_ShinyCharm[] = INCBIN_U32("graphics/items/icon_palettes/Shiny_Charm.gbapal.lz");
+

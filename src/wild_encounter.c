@@ -350,7 +350,8 @@ static u8 PickWildMonNature(void)
 static void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
-
+    u16 monData;
+	
     ZeroEnemyPartyMons();
     checkCuteCharm = TRUE;
 
@@ -379,12 +380,26 @@ static void CreateWildMon(u16 species, u8 level)
             gender = MON_FEMALE;
 
         CreateMonWithGenderNatureLetter(&gEnemyParty[0], species, level, 32, gender, PickWildMonNature(), 0);
+		
+		//To assign hidden ability
+		if (FlagGet(HIDDEN_ABILITY_FLAG))
+		{
+		    monData = 2;
+			SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &monData);
+		}
         return;
     }
 
     CreateMonWithNature(&gEnemyParty[0], species, level, 32, PickWildMonNature());
+	//To assign hidden ability
+	if (FlagGet(HIDDEN_ABILITY_FLAG))
+	{
+		monData = 2;
+		SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &monData);
+	}
 }
 
+	
 enum
 {
     WILD_AREA_LAND,

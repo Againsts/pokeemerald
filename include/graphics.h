@@ -6383,6 +6383,8 @@ extern const u32 gItemIcon_SwiftWing[];
 extern const u32 gItemIconPalette_SwiftWing[];
 extern const u32 gItemIcon_PrettyWing[];
 extern const u32 gItemIconPalette_PrettyWing[];
+extern const u32 gItemIcon_ShinyCharm[];	//SWSB
+extern const u32 gItemIconPalette_ShinyCharm[];	//SWSB
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 
