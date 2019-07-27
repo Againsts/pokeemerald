@@ -254,7 +254,7 @@ const struct YesNoFuncTable sYesNoTossFunctions = {BagMenu_ConfirmToss, BagMenu_
 
 const struct YesNoFuncTable sYesNoSellItemFunctions = {BagMenu_ConfirmSell, BagMenu_CancelSell};
 
-const struct ScrollArrowsTemplate gBagScrollArrowsTemplate = {SCROLL_ARROW_LEFT, 0x1C, 16, SCROLL_ARROW_RIGHT, 100, 16, -1, -1, 0x6F, 0x6F, 0};
+const struct ScrollArrowsTemplate gBagScrollArrowsTemplate = {SCROLL_ARROW_LEFT, 8, 16, SCROLL_ARROW_RIGHT, 80, 16, -1, -1, 0x6F, 0x6F, 0};
 
 const u8 gUnknown_086140A4[] = INCBIN_U8("graphics/interface/select_button.4bpp");
 
@@ -264,37 +264,38 @@ static const u8 sFontColorTable[][3] = {
     {0, 1, 4},
     {0, 3, 6},
     {2, 1, 3},
-    {0, 14, 10}
+    {0, 14, 10},
+    {0, 2, 4}
 };
 
 const struct WindowTemplate gUnknown_08614174[] =
 {
     { // Item names
         .bg = 0,
-        .tilemapLeft = 14,
-        .tilemapTop = 2,
+        .tilemapLeft = 12,
+        .tilemapTop = 1,
         .width = 15,
-        .height = 16,
+        .height = 12,
         .paletteNum = 1,
         .baseBlock = 0x27,
     },
     { // Description
         .bg = 0,
-        .tilemapLeft = 0,
-        .tilemapTop = 13,
-        .width = 14,
+        .tilemapLeft = 6,
+        .tilemapTop = 14,
+        .width = 20,
         .height = 6,
         .paletteNum = 1,
         .baseBlock = 0x117,
     },
     { // Pocket name
         .bg = 0,
-        .tilemapLeft = 4,
+        .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 8,
         .height = 2,
         .paletteNum = 1,
-        .baseBlock = 0x1A1,
+        .baseBlock = 0x1C5,
     },
     { // TM/HM info icons
         .bg = 0,
@@ -303,7 +304,7 @@ const struct WindowTemplate gUnknown_08614174[] =
         .width = 5,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x16B,
+        .baseBlock = 0x18F,
     },
     {// TM/HM info
         .bg = 0,
@@ -312,7 +313,7 @@ const struct WindowTemplate gUnknown_08614174[] =
         .width = 4,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x189,
+        .baseBlock = 0x1AD,
     },
     { // Field message box
         .bg = 1,
@@ -321,7 +322,7 @@ const struct WindowTemplate gUnknown_08614174[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1B1,
+        .baseBlock = 0x1D5,
     },
     DUMMY_WIN_TEMPLATE,
 };
@@ -335,7 +336,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 7,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -344,7 +345,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 7,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -353,7 +354,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 14,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -362,7 +363,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 14,
         .height = 6,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -371,7 +372,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1B1,
+        .baseBlock = 0x1D5,
     },
     {
         .bg = 1,
@@ -380,7 +381,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -389,7 +390,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -398,7 +399,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 5,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x21D,
+        .baseBlock = 0x241,
     },
     {
         .bg = 1,
@@ -407,7 +408,7 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x245,
+        .baseBlock = 0x269,
     },
     {
         .bg = 1,
@@ -416,18 +417,18 @@ const struct WindowTemplate gUnknown_086141AC[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x231,
+        .baseBlock = 0x255,
     },
 };
 
 // .text
 
 struct ListBuffer1 {
-    struct ListMenuItem subBuffers[65];
+    struct ListMenuItem subBuffers[100];
 };
 
 struct ListBuffer2 {
-    s8 name[65][24];
+    s8 name[100][24];
 };
 
 struct TempWallyStruct {
@@ -628,7 +629,7 @@ bool8 SetupBagMenu(void)
     case 13:
         BagMenu_PrintPocketNames(gPocketNamesStringsTable[gBagPositionStruct.pocket], 0);
         BagMenu_CopyPocketNameToWindow(0);
-        BagMenu_DrawPocketIndicatorSquare(gBagPositionStruct.pocket, 1);
+        //BagMenu_DrawPocketIndicatorSquare(gBagPositionStruct.pocket, 1);
         gMain.state++;
         break;
     case 14:
@@ -854,11 +855,11 @@ void PrintItemQuantityPlusGFX(u8 rboxId, s32 item_index_in_pocket, u8 a)
             ConvertIntToDecimalStringN(gStringVar1, itemQuantity, 1, 3);
             StringExpandPlaceholders(gStringVar4, gText_xVar1);
             offset = GetStringRightAlignXOffset(7, gStringVar4, 0x77);
-            BagMenu_Print(rboxId, 7, gStringVar4, offset, a, 0, 0, -1, 0);
+            BagMenu_Print(rboxId, 7, gStringVar4, offset, a, 0, 0, -1, 5);
         }
         else if (gBagPositionStruct.pocket != KEYITEMS_POCKET && (unique = ItemId_GetImportance(itemId)) == FALSE)
         {
-            ConvertIntToDecimalStringN(gStringVar1, itemQuantity, 1, 2);
+            ConvertIntToDecimalStringN(gStringVar1, itemQuantity, 1, 3);
             StringExpandPlaceholders(gStringVar4, gText_xVar1);
             offset = GetStringRightAlignXOffset(7, gStringVar4, 0x77);
             BagMenu_Print(rboxId, 7, gStringVar4, offset, a, unique, unique, -1, unique);
@@ -885,7 +886,7 @@ void BagMenu_PrintDescription(int a)
         str = gStringVar4;
     }
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
-    BagMenu_Print(1, 1, str, 3, 1, 0, 0, 0, 0);
+    BagMenu_Print(1, 0, str, 0, 4, 0, 0, 0, 5);
 }
 
 void BagMenu_PrintCursor_(u8 a, u8 b)
@@ -905,7 +906,7 @@ void BagMenu_PrintCursor(u8 a, u8 b)
 void bag_menu_add_pocket_scroll_arrow_indicators_maybe(void)
 {
     if (gBagMenu->unk81E == 0xFF)
-        gBagMenu->unk81E = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 0xAC, 12, 0x94, gBagMenu->numItemStacks[gBagPositionStruct.pocket] - gBagMenu->numShownItems[gBagPositionStruct.pocket], 0x6E, 0x6E, &gBagPositionStruct.scrollPosition[gBagPositionStruct.pocket]);
+        gBagMenu->unk81E = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 159, 12, 106, gBagMenu->numItemStacks[gBagPositionStruct.pocket] - gBagMenu->numShownItems[gBagPositionStruct.pocket], 0x6E, 0x6E, &gBagPositionStruct.scrollPosition[gBagPositionStruct.pocket]);
 }
 
 void sub_81AB824(void)
@@ -986,8 +987,8 @@ void sub_81AB9A8(u8 pocketId)
     if (!gBagMenu->hideCloseBagText)
         gBagMenu->numItemStacks[pocketId]++;
 
-    if (gBagMenu->numItemStacks[pocketId] > 8)
-        gBagMenu->numShownItems[pocketId] = 8;
+    if (gBagMenu->numItemStacks[pocketId] > 6)
+        gBagMenu->numShownItems[pocketId] = 6;
     else
         gBagMenu->numShownItems[pocketId] = gBagMenu->numItemStacks[pocketId];
 }
@@ -1201,13 +1202,13 @@ void SwitchBagPocket(u8 taskId, s16 deltaBagPocketId, u16 a3)
         BagMenu_PrintPocketNames(gPocketNamesStringsTable[pocketId], gPocketNamesStringsTable[gBagPositionStruct.pocket]);
         BagMenu_CopyPocketNameToWindow(8);
     }
-    BagMenu_DrawPocketIndicatorSquare(gBagPositionStruct.pocket, 0);
-    BagMenu_DrawPocketIndicatorSquare(pocketId, 1);
-    FillBgTilemapBufferRect_Palette0(2, 11, 14, 2, 15, 16);
+    //BagMenu_DrawPocketIndicatorSquare(gBagPositionStruct.pocket, 0);
+    //BagMenu_DrawPocketIndicatorSquare(pocketId, 1);
+    //FillBgTilemapBufferRect_Palette0(2, 11, 14, 2, 15, 16);
     schedule_bg_copy_tilemap_to_vram(2);
     SetBagVisualPocketId(pocketId, 1);
     RemoveBagSprite(1);
-    AddSwitchPocketRotatingBallSprite(deltaBagPocketId);
+    //AddSwitchPocketRotatingBallSprite(deltaBagPocketId);
     SetTaskFuncWithFollowupFunc(taskId, sub_81AC10C, gTasks[taskId].func);
 }
 
@@ -1234,7 +1235,7 @@ void sub_81AC10C(u8 taskId)
     switch (data[13])
     {
         case 0:
-            sub_81AC23C(data[12]);
+            //sub_81AC23C(data[12]);
             if (!(++data[12] & 1))
             {
                 if (data[11] == 1)
@@ -1294,7 +1295,7 @@ void BagMenu_SwapItems(u8 taskId)
     CopyItemName(BagGetItemIdByPocketPosition(gBagPositionStruct.pocket + 1, data[1]), gStringVar1);
     StringExpandPlaceholders(gStringVar4, gText_MoveVar1Where);
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
-    BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+    BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
     sub_80D4FEC(data[1]);
     sub_81AB89C();
     BagMenu_PrintCursor_(data[0], 2);
@@ -1506,7 +1507,7 @@ void sub_81AC644(u8 unused)
         CopyItemName(gSpecialVar_ItemId, gStringVar1);
         StringExpandPlaceholders(gStringVar4, gText_Var1IsSelected);
         FillWindowPixelBuffer(1, PIXEL_FILL(0));
-        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
     }
     if (gBagMenu->unk828 == 1)
         sub_81ACAF8(BagMenu_AddWindow(0));
@@ -1671,7 +1672,7 @@ void ItemMenu_Toss(u8 taskId)
         CopyItemName(gSpecialVar_ItemId, gStringVar1);
         StringExpandPlaceholders(gStringVar4, gText_TossHowManyVar1s);
         FillWindowPixelBuffer(1, PIXEL_FILL(0));
-        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
         sub_81ABC3C(7);
         gTasks[taskId].func = Task_ChooseHowManyToToss;
     }
@@ -1685,7 +1686,7 @@ void BagMenu_TossItems(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar2, data[8], 0, 3);
     StringExpandPlaceholders(gStringVar4, gText_ConfirmTossItems);
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
-    BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+    BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
     BagMenu_YesNo(taskId, 5, &sYesNoTossFunctions);
 }
 
@@ -1728,7 +1729,7 @@ void BagMenu_ConfirmToss(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar2, data[8], 0, 3);
     StringExpandPlaceholders(gStringVar4, gText_ThrewAwayVar2Var1s);
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
-    BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+    BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
     gTasks[taskId].func = Task_ActuallyToss;
 }
 
@@ -2044,7 +2045,7 @@ void DisplayDepositItemAskString(u8 taskId)
         CopyItemName(gSpecialVar_ItemId, gStringVar1);
         StringExpandPlaceholders(gStringVar4, gText_DepositHowManyVar1);
         FillWindowPixelBuffer(1, PIXEL_FILL(0));
-        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
         sub_81ABC3C(7);
         gTasks[taskId].func = sub_81ADA7C;
     }
@@ -2081,7 +2082,7 @@ void sub_81ADB14(u8 taskId)
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
     if (ItemId_GetImportance(gSpecialVar_ItemId))
     {
-        BagMenu_Print(1, 1, gText_CantStoreImportantItems, 3, 1, 0, 0, 0, 0);
+        BagMenu_Print(1, 1, gText_CantStoreImportantItems, 3, 1, 0, 0, 0, 5);
         gTasks[taskId].func = sub_81ADC0C;
     }
     else if (AddPCItem(gSpecialVar_ItemId, data[8]) == TRUE)
@@ -2089,12 +2090,12 @@ void sub_81ADB14(u8 taskId)
         CopyItemName(gSpecialVar_ItemId, gStringVar1);
         ConvertIntToDecimalStringN(gStringVar2, data[8], 0, 3);
         StringExpandPlaceholders(gStringVar4, gText_DepositedVar2Var1s);
-        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 0);
+        BagMenu_Print(1, 1, gStringVar4, 3, 1, 0, 0, 0, 5);
         gTasks[taskId].func = Task_ActuallyToss;
     }
     else
     {
-        BagMenu_Print(1, 1, gText_NoRoomForItems, 3, 1, 0, 0, 0, 0);
+        BagMenu_Print(1, 1, gText_NoRoomForItems, 3, 1, 0, 0, 0, 5);
         gTasks[taskId].func = sub_81ADC0C;
     }
 }
@@ -2245,12 +2246,12 @@ void BagMenu_PrintPocketNames(const u8 *pocketName1, const u8 *pocketName2)
     window.height = 2;
     windowId = AddWindow(&window);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
-    offset = GetStringCenterAlignXOffset(1, pocketName1, 0x40);
-    BagMenu_Print(windowId, 1, pocketName1, offset, 1, 0, 0, -1, 1);
+    offset = GetStringCenterAlignXOffset(1, pocketName1, 0x42);
+    BagMenu_Print(windowId, 1, pocketName1, offset , 1, 0, 0, -1, 0);
     if (pocketName2)
     {
-        offset = GetStringCenterAlignXOffset(1, pocketName2, 0x40);
-        BagMenu_Print(windowId, 1, pocketName2, offset + 0x40, 1, 0, 0, -1, 1);
+        offset = GetStringCenterAlignXOffset(1, pocketName2, 0x42);
+        BagMenu_Print(windowId, 1, pocketName2, offset + 0x40, 1, 0, 0, -1, 0);
     }
     CpuCopy32((u8*)GetWindowAttribute(windowId, WINDOW_TILE_DATA), gBagMenu->pocketNameBuffer, 0x400);
     RemoveWindow(windowId);
