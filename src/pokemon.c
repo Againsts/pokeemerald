@@ -2517,11 +2517,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
     }
 
-    if (gBaseStats[species].abilities[1])
-    {
-        value = personality & 1;
+		//Force initial no hidden ability
+        value = 0;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
-    }
 
     GiveBoxMonInitialMoveset(boxMon);
 }
@@ -4439,23 +4437,27 @@ u8 GetMonsStateToDoubles_2(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u8 GetAbilityBySpecies(u16 species, u8 abilityNum)
+u8 GetAbilityBySpecies(u16 species, u8 abilityNum, u32 personality)
 {
-    if (abilityNum == 2)
-        gLastUsedAbility = gBaseStats[species].abilityHidden;
-    else if (abilityNum == 1)
-        gLastUsedAbility = gBaseStats[species].abilities[1];
-    else
-        gLastUsedAbility = gBaseStats[species].abilities[0];
-
-    return gLastUsedAbility;
+	u8 p16;
+	p16 = (personality / 65536) % 2;
+	
+    if ((abilityNum == TRUE) && gBaseStats[species].abilityHidden != ABILITY_NONE)
+		gLastUsedAbility = gBaseStats[species].abilityHidden;
+	else if ((p16 == 1) &&gBaseStats[species].abilities[1] != ABILITY_NONE)
+		gLastUsedAbility = gBaseStats[species].abilities[1];
+	else 
+		gLastUsedAbility = gBaseStats[species].abilities[0];
+	return gLastUsedAbility;
 }
 
 u8 GetMonAbility(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
-    return GetAbilityBySpecies(species, abilityNum);
+	u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+	
+    return GetAbilityBySpecies(species, abilityNum, personality);
 }
 
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
@@ -4601,7 +4603,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->type1 = gBaseStats[dst->species].type1;
     dst->type2 = gBaseStats[dst->species].type2;
     dst->type3 = TYPE_MYSTERY;
-    dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
+    dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum, dst->personality);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy10(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);

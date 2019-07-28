@@ -347,7 +347,7 @@ static u8 PickWildMonNature(void)
     return Random() % 25;
 }
 
-static void CreateWildMon(u16 species, u8 level)
+void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
     u16 monData;
@@ -384,7 +384,7 @@ static void CreateWildMon(u16 species, u8 level)
 		//To assign hidden ability
 		if (FlagGet(HIDDEN_ABILITY_FLAG))
 		{
-		    monData = 2;
+		    monData = 1;
 			SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &monData);
 		}
         return;
@@ -394,7 +394,7 @@ static void CreateWildMon(u16 species, u8 level)
 	//To assign hidden ability
 	if (FlagGet(HIDDEN_ABILITY_FLAG))
 	{
-		monData = 2;
+		monData = 1;
 		SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &monData);
 	}
 }
