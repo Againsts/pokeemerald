@@ -2517,8 +2517,12 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
     }
 
-		//Force initial no hidden ability
-        value = 0;
+		//Force initially no hidden ability
+		if (FlagGet(HIDDEN_ABILITY_FLAG))
+			value = 1;
+		else
+			value = 0;
+
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
 
     GiveBoxMonInitialMoveset(boxMon);
