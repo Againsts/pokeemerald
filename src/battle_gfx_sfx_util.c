@@ -532,7 +532,7 @@ static void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battlerId, bool32 op
                                               species, currentPersonality);
 
     paletteOffset = 0x100 + battlerId * 16;
-
+	}
     if (gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies == SPECIES_NONE)
         lzPaletteData = GetMonFrontSpritePal(mon);
     else
@@ -632,11 +632,6 @@ void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
 void BattleLoadOpponentMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
 {
     BattleLoadMonSpriteGfx(mon, battlerId, TRUE);
-}
-
-void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
-{
-    BattleLoadMonSpriteGfx(mon, battlerId, FALSE);
 }
 
 void nullsub_24(u16 species)
