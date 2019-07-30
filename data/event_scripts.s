@@ -7115,3 +7115,51 @@ gText_082C877B:: @ 82C877B
 	.align 2
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/AtroposKohlrabiGarden/scripts.inc"
+
+	.include "data/maps/AtroposQuiteTown/scripts.inc"
+
+	.include "data/maps/AtroposGinkgoCity/scripts.inc"
+
+	.include "data/maps/AtroposMacarangaTown/scripts.inc"
+
+	.include "data/maps/AtroposCurvifoliaTown/scripts.inc"
+
+	.include "data/maps/AtroposCycasCity/scripts.inc"
+
+	.include "data/maps/AtroposTheGoldenBay/scripts.inc"
+
+	.include "data/maps/AtroposBanabaTown/scripts.inc"
+
+	.include "data/maps/AtroposPlatiniumCity/scripts.inc"
+
+	.include "data/maps/AtroposHuperTown/scripts.inc"
+
+	.include "data/maps/AtroposDavidiaCity/scripts.inc"
+
+	.include "data/maps/AtroposBubbleIsland/scripts.inc"
+
+	.include "data/maps/AtroposDidaVillage/scripts.inc"
+
+	.include "data/maps/AtroposRouteAlpha/scripts.inc"
+
+	.include "data/maps/AtroposRouteBeta/scripts.inc"
+
+	.include "data/maps/AtroposRouteGamma/scripts.inc"
+
+	.include "data/maps/AtroposRouteDelta/scripts.inc"
+
+	.include "data/maps/AtroposRouteEpsilon/scripts.inc"
+
+	.include "data/maps/AtroposRouteZeta/scripts.inc"
+
+	.include "data/maps/AtroposRouteEta/scripts.inc"
+
+	.include "data/maps/AtroposRouteTheta/scripts.inc"
+
+	.include "data/maps/AtroposRouteIota/scripts.inc"
+
+	.include "data/maps/AtroposRouteKappa/scripts.inc"
+
+	.include "data/maps/AtroposPrideRoad/scripts.inc"

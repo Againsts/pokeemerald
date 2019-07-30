@@ -1729,3 +1729,23 @@ gTilesetPalettes_UnionRoom:: @ 8395678
 	.align 2
 gTilesetTiles_UnionRoom:: @ 8395878
 	.incbin "data/tilesets/secondary/union_room/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_AtroposOutdoorGeneral::
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/00.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/01.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/02.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/03.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/04.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/05.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/06.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/07.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/08.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/09.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/10.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/11.gbapal"
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_AtroposOutdoorGeneral::
+	.incbin "data/tilesets/primary/atroposoutdoorgeneral/tiles.4bpp.lz"
