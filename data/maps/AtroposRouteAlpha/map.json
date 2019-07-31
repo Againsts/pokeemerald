@@ -1,0 +1,35 @@
+{
+    "allow_bike": true,
+    "allow_escape_rope": false,
+    "allow_running": true,
+    "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+    "bg_events": [
+    ],
+    "connections": [
+        {
+            "direction": "right",
+            "map": "MAP_ATROPOS_KOHLRABI_GARDEN",
+            "offset": 0
+        },
+        {
+            "direction": "left",
+            "map": "MAP_ATROPOS_QUITE_TOWN",
+            "offset": 0
+        }
+    ],
+    "coord_events": [
+    ],
+    "id": "MAP_ATROPOS_ROUTE_ALPHA",
+    "layout": "LAYOUT_ATROPOS_ROUTE_ALPHA",
+    "map_type": "MAP_TYPE_ROUTE",
+    "music": "MUS_DAN02",
+    "name": "AtroposRouteAlpha",
+    "object_events": [
+    ],
+    "region_map_section": "MAPSEC_ROUTE_101",
+    "requires_flash": false,
+    "show_map_name": true,
+    "warp_events": [
+    ],
+    "weather": "WEATHER_SUNNY"
+}
