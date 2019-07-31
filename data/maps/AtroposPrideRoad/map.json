@@ -15,6 +15,11 @@
             "direction": "up",
             "map": "MAP_ATROPOS_DAVIDIA_CITY",
             "offset": 0
+        },
+        {
+            "direction": "up",
+            "map": "MAP_ATROPOS_DAVIDIA_CITY",
+            "offset": 0
         }
     ],
     "coord_events": [

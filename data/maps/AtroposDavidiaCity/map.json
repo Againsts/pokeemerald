@@ -4,8 +4,30 @@
     "allow_running": true,
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposDavidiaCity_EventScript1",
+            "type": "sign",
+            "x": 9,
+            "y": 8
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposDavidiaCity_EventScript1",
+            "type": "sign",
+            "x": 10,
+            "y": 8
+        }
     ],
-    "connections": null,
+    "connections": [
+        {
+            "direction": "down",
+            "map": "MAP_ATROPOS_PRIDE_ROAD",
+            "offset": 0
+        }
+    ],
     "coord_events": [
     ],
     "id": "MAP_ATROPOS_DAVIDIA_CITY",

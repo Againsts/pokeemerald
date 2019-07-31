@@ -15,6 +15,11 @@
             "direction": "left",
             "map": "MAP_ATROPOS_HUPER_TOWN",
             "offset": 0
+        },
+        {
+            "direction": "up",
+            "map": "MAP_ATROPOS_PRIDE_ROAD",
+            "offset": 0
         }
     ],
     "coord_events": [

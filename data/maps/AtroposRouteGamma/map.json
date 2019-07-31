@@ -15,6 +15,11 @@
             "direction": "left",
             "map": "MAP_ATROPOS_GINKGO_CITY",
             "offset": 40
+        },
+        {
+            "direction": "left",
+            "map": "MAP_ATROPOS_ROUTE_EPSILON",
+            "offset": -20
         }
     ],
     "coord_events": [
