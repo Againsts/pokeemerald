@@ -840,4 +840,4 @@ gTileset_AtroposOutdoorGeneral::
 	.4byte gTilesetPalettes_AtroposOutdoorGeneral
 	.4byte gMetatiles_AtroposOutdoorGeneral
 	.4byte gMetatileAttributes_AtroposOutdoorGeneral
-	.4byte NULL
+	.4byte InitTilesetAnim_Atropos_Outdoor_General

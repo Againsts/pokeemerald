@@ -1186,3 +1186,41 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
             sSecondaryTilesetAnimCallback = NULL;
     }
 }
+
+//swsb
+static void TilesetAnim_Atropos_Outdoor_General(u16);
+static void QueueAnimsTiles_Pc_Mart_Banner(u16);
+const u16 gTilesetAnims_Pc_Mart_Banner_Frame0[] = INCBIN_U16("data/tilesets/primary/atroposoutdoorgeneral/anim/pc_mart/0.4bpp");
+const u16 gTilesetAnims_Pc_Mart_Banner_Frame1[] = INCBIN_U16("data/tilesets/primary/atroposoutdoorgeneral/anim/pc_mart/1.4bpp");
+const u16 gTilesetAnims_Pc_Mart_Banner_Frame2[] = INCBIN_U16("data/tilesets/primary/atroposoutdoorgeneral/anim/pc_mart/2.4bpp");
+const u16 gTilesetAnims_Pc_Mart_Banner_Frame3[] = INCBIN_U16("data/tilesets/primary/atroposoutdoorgeneral/anim/pc_mart/3.4bpp");
+const u16 gTilesetAnims_Pc_Mart_Banner_Frame4[] = INCBIN_U16("data/tilesets/primary/atroposoutdoorgeneral/anim/pc_mart/4.4bpp");
+const u16 gTilesetAnims_Pc_Mart_Banner_Frame5[] = INCBIN_U16("data/tilesets/primary/atroposoutdoorgeneral/anim/pc_mart/5.4bpp");
+
+const u16 *const gTilesetAnims_Pc_Mart_Banner[] = {
+    gTilesetAnims_Pc_Mart_Banner_Frame0,
+    gTilesetAnims_Pc_Mart_Banner_Frame1,
+    gTilesetAnims_Pc_Mart_Banner_Frame2,
+	gTilesetAnims_Pc_Mart_Banner_Frame3,
+	gTilesetAnims_Pc_Mart_Banner_Frame4,
+	gTilesetAnims_Pc_Mart_Banner_Frame5
+};
+
+void InitTilesetAnim_Atropos_Outdoor_General(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_Atropos_Outdoor_General;
+}
+
+static void TilesetAnim_Atropos_Outdoor_General(u16 timer)
+{
+    if (timer % 6 == 0)
+        QueueAnimsTiles_Pc_Mart_Banner(timer >> 4);
+}
+
+static void QueueAnimsTiles_Pc_Mart_Banner(u16 timer)
+{
+    u16 i = timer % 6; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Pc_Mart_Banner[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x14F)), 0x80);
+}
