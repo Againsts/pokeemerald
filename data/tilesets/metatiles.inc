@@ -565,3 +565,17 @@ gMetatiles_AtroposOutdoorGeneral::
 	.align 1
 gMetatileAttributes_AtroposOutdoorGeneral::
 	.incbin "data/tilesets/primary/atroposoutdoorgeneral/metatile_attributes.bin"
+	.align 1
+gMetatiles_AtroposOutdoor_0::
+	.incbin "data/tilesets/secondary/atroposoutdoor_0/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_AtroposOutdoor_0::
+	.incbin "data/tilesets/secondary/atroposoutdoor_0/metatile_attributes.bin"
+	.align 1
+gMetatiles_AtroposOutdoor_1::
+	.incbin "data/tilesets/secondary/atroposoutdoor_1/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_AtroposOutdoor_1::
+	.incbin "data/tilesets/secondary/atroposoutdoor_1/metatile_attributes.bin"
