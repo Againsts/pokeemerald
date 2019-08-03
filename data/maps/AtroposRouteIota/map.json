@@ -10,11 +10,6 @@
             "direction": "down",
             "map": "MAP_ATROPOS_THE_GOLDEN_BAY",
             "offset": 0
-        },
-        {
-            "direction": "up",
-            "map": "MAP_ATROPOS_PLATINIUM_CITY",
-            "offset": 0
         }
     ],
     "coord_events": [

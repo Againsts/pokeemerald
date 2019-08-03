@@ -19,7 +19,7 @@
         {
             "direction": "right",
             "map": "MAP_ATROPOS_ROUTE_GAMMA",
-            "offset": 20
+            "offset": 30
         }
     ],
     "coord_events": [

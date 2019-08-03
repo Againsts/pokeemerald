@@ -10,11 +10,6 @@
             "direction": "right",
             "map": "MAP_ATROPOS_CURVIFOLIA_TOWN",
             "offset": 0
-        },
-        {
-            "direction": "left",
-            "map": "MAP_ATROPOS_PLATINIUM_CITY",
-            "offset": 0
         }
     ],
     "coord_events": [

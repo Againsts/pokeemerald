@@ -4457,7 +4457,7 @@
             "id": "LAYOUT_ATROPOS_CURVIFOLIA_TOWN",
             "name": "AtroposCurvifoliaTown_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_Petalburg",
+            "secondary_tileset": "gTileset_AtroposOutdoor_3",
             "width": 20
         },
         {
@@ -4493,12 +4493,12 @@
         {
             "blockdata_filepath": "data/layouts/AtroposPlatiniumCity/map.bin",
             "border_filepath": "data/layouts/AtroposPlatiniumCity/border.bin",
-            "height": 20,
+            "height": 40,
             "id": "LAYOUT_ATROPOS_PLATINIUM_CITY",
             "name": "AtroposPlatiniumCity_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_Pacifidlog",
-            "width": 20
+            "secondary_tileset": "gTileset_AtroposOutdoor_3",
+            "width": 30
         },
         {
             "blockdata_filepath": "data/layouts/AtroposHuperTown/map.bin",
@@ -4587,7 +4587,7 @@
             "id": "LAYOUT_ATROPOS_ROUTE_EPSILON",
             "name": "AtroposRouteEpsilon_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_Petalburg",
+            "secondary_tileset": "gTileset_AtroposOutdoor_2",
             "width": 60
         },
         {
@@ -4603,11 +4603,11 @@
         {
             "blockdata_filepath": "data/layouts/AtroposRouteEta/map.bin",
             "border_filepath": "data/layouts/AtroposRouteEta/border.bin",
-            "height": 20,
+            "height": 30,
             "id": "LAYOUT_ATROPOS_ROUTE_ETA",
             "name": "AtroposRouteEta_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_Petalburg",
+            "secondary_tileset": "gTileset_AtroposOutdoor_3",
             "width": 60
         },
         {
