@@ -9,7 +9,7 @@
         {
             "direction": "right",
             "map": "MAP_ATROPOS_ROUTE_KAPPA",
-            "offset": 0
+            "offset": 2
         }
     ],
     "coord_events": [

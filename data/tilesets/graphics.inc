@@ -1851,3 +1851,23 @@ gTilesetPalettes_AtroposOutdoor_4::
 	.align 2
 gTilesetTiles_AtroposOutdoor_4::
 	.incbin "data/tilesets/secondary/atroposoutdoor_4/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_AtroposOutdoor_5::
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_AtroposOutdoor_5::
+	.incbin "data/tilesets/secondary/atroposoutdoor_5/tiles.4bpp.lz"

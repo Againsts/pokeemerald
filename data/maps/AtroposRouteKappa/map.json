@@ -9,7 +9,7 @@
         {
             "direction": "left",
             "map": "MAP_ATROPOS_HUPER_TOWN",
-            "offset": 0
+            "offset": -2
         },
         {
             "direction": "up",
