@@ -30,6 +30,13 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ATROPOS_PLATINIUM_CITY",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 30,
+            "y": 9
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }

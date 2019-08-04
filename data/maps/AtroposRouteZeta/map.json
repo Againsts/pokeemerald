@@ -9,12 +9,12 @@
         {
             "direction": "left",
             "map": "MAP_ATROPOS_MACARANGA_TOWN",
-            "offset": 0
+            "offset": 4
         },
         {
             "direction": "right",
             "map": "MAP_ATROPOS_BANABA_TOWN",
-            "offset": 0
+            "offset": -2
         }
     ],
     "coord_events": [

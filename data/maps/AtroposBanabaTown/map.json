@@ -9,7 +9,7 @@
         {
             "direction": "left",
             "map": "MAP_ATROPOS_ROUTE_ZETA",
-            "offset": 0
+            "offset": 2
         }
     ],
     "coord_events": [
