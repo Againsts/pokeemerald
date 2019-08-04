@@ -19,7 +19,7 @@
         {
             "direction": "left",
             "map": "MAP_ATROPOS_ROUTE_ETA",
-            "offset": 0
+            "offset": -6
         }
     ],
     "coord_events": [

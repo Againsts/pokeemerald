@@ -4497,7 +4497,7 @@
             "id": "LAYOUT_ATROPOS_PLATINIUM_CITY",
             "name": "AtroposPlatiniumCity_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_AtroposOutdoor_3",
+            "secondary_tileset": "gTileset_AtroposOutdoor_4",
             "width": 30
         },
         {

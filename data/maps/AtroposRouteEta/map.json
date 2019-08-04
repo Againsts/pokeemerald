@@ -9,7 +9,7 @@
         {
             "direction": "right",
             "map": "MAP_ATROPOS_CURVIFOLIA_TOWN",
-            "offset": 0
+            "offset": 6
         }
     ],
     "coord_events": [
@@ -25,6 +25,13 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ATROPOS_PLATINIUM_CITY",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 3,
+            "y": 13
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }
