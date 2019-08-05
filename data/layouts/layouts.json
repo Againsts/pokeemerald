@@ -4473,12 +4473,12 @@
         {
             "blockdata_filepath": "data/layouts/AtroposTheGoldenBay/map.bin",
             "border_filepath": "data/layouts/AtroposTheGoldenBay/border.bin",
-            "height": 40,
+            "height": 48,
             "id": "LAYOUT_ATROPOS_THE_GOLDEN_BAY",
             "name": "AtroposTheGoldenBay_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_Petalburg",
-            "width": 40
+            "secondary_tileset": "gTileset_AtroposOutdoor_8",
+            "width": 48
         },
         {
             "blockdata_filepath": "data/layouts/AtroposBanabaTown/map.bin",

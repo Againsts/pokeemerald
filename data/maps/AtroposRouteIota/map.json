@@ -9,7 +9,7 @@
         {
             "direction": "down",
             "map": "MAP_ATROPOS_THE_GOLDEN_BAY",
-            "offset": 0
+            "offset": -4
         }
     ],
     "coord_events": [

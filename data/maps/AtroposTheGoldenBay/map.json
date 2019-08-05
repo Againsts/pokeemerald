@@ -14,7 +14,7 @@
         {
             "direction": "up",
             "map": "MAP_ATROPOS_ROUTE_IOTA",
-            "offset": 0
+            "offset": 4
         }
     ],
     "coord_events": [
