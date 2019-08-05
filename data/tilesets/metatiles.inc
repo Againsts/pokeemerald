@@ -631,3 +631,10 @@ gMetatiles_AtroposOutdoor_8::
 	.align 1
 gMetatileAttributes_AtroposOutdoor_8::
 	.incbin "data/tilesets/secondary/atroposoutdoor_8/metatile_attributes.bin"
+	.align 1
+gMetatiles_AtroposOutdoor_9::
+	.incbin "data/tilesets/secondary/atroposoutdoor_9/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_AtroposOutdoor_9::
+	.incbin "data/tilesets/secondary/atroposoutdoor_9/metatile_attributes.bin"

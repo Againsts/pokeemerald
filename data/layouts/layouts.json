@@ -4467,7 +4467,7 @@
             "id": "LAYOUT_ATROPOS_CYCAS_CITY",
             "name": "AtroposCycasCity_Layout",
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
-            "secondary_tileset": "gTileset_Petalburg",
+            "secondary_tileset": "gTileset_AtroposOutdoor_9",
             "width": 20
         },
         {
