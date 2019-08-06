@@ -7167,3 +7167,11 @@ gText_082C877B:: @ 82C877B
 	.include "data/maps/AtroposKohlrabiBeach/scripts.inc"
 
 	.include "data/maps/AtroposKohlrabiSecretGarden/scripts.inc"
+
+	.include "data/maps/AtroposVivianHouse1F/scripts.inc"
+
+	.include "data/maps/AtroposVivianHouse2F/scripts.inc"
+
+	.include "data/maps/AtroposKohlrabiIndoor1/scripts.inc"
+
+	.include "data/maps/LachesisBattleDome/scripts.inc"

@@ -35,6 +35,13 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ATROPOS_VIVIAN_HOUSE1F",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 14,
+            "y": 15
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }

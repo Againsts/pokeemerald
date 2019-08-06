@@ -952,3 +952,14 @@ gTileset_AtroposOutdoor_9::
 	.4byte gMetatiles_AtroposOutdoor_9
 	.4byte gMetatileAttributes_AtroposOutdoor_9
 	.4byte NULL
+
+	.align 2
+gTileset_AtroposIndoor_0::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_AtroposIndoor_0
+	.4byte gTilesetPalettes_AtroposIndoor_0
+	.4byte gMetatiles_AtroposIndoor_0
+	.4byte gMetatileAttributes_AtroposIndoor_0
+	.4byte NULL
