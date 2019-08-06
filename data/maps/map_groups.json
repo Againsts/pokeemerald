@@ -613,7 +613,9 @@
         "AtroposRouteTheta",
         "AtroposRouteIota",
         "AtroposRouteKappa",
-        "AtroposPrideRoad"
+        "AtroposPrideRoad",
+        "AtroposKohlrabiBeach",
+        "AtroposKohlrabiSecretGarden"
     ],
     "group_order": [
         "gMapGroupAtroposOutdoor",

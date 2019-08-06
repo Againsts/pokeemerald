@@ -7163,3 +7163,7 @@ gText_082C877B:: @ 82C877B
 	.include "data/maps/AtroposRouteKappa/scripts.inc"
 
 	.include "data/maps/AtroposPrideRoad/scripts.inc"
+
+	.include "data/maps/AtroposKohlrabiBeach/scripts.inc"
+
+	.include "data/maps/AtroposKohlrabiSecretGarden/scripts.inc"

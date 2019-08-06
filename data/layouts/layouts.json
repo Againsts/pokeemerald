@@ -4649,6 +4649,26 @@
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
             "secondary_tileset": "gTileset_AtroposOutdoor_7",
             "width": 20
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposKohlrabiBeach/map.bin",
+            "border_filepath": "data/layouts/AtroposKohlrabiBeach/border.bin",
+            "height": 40,
+            "id": "LAYOUT_ATROPOS_KOHLRABI_BEACH",
+            "name": "AtroposKohlrabiBeach_Layout",
+            "primary_tileset": "gTileset_AtroposOutdoorGeneral",
+            "secondary_tileset": "gTileset_AtroposOutdoor_0",
+            "width": 40
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposKohlrabiSecretGarden/map.bin",
+            "border_filepath": "data/layouts/AtroposKohlrabiSecretGarden/border.bin",
+            "height": 20,
+            "id": "LAYOUT_ATROPOS_KOHLRABI_SECRET_GARDEN",
+            "name": "AtroposKohlrabiSecretGarden_Layout",
+            "primary_tileset": "gTileset_AtroposOutdoorGeneral",
+            "secondary_tileset": "gTileset_AtroposOutdoor_0",
+            "width": 20
         }
     ],
     "layouts_table_label": "gMapLayouts"
