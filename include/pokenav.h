@@ -11,7 +11,7 @@ struct PokenavSub18
 {
     u16 unk0;
     u16 unk2;
-    struct
+    struct PokenavMonList
     {
         u8 boxId;
         u8 monId;
@@ -107,7 +107,7 @@ void sub_81C8234(void);
 
 // pokenav_match_call_data.c
 bool32 sub_81D17E8(u32 idx);
-u8 sub_81D16DC(u32 idx);
+u8 MatchCallMapSecGetByIndex(u32 idx);
 bool32 sub_81D1BF8(u32 idx);
 bool32 MatchCallFlagGetByIndex(u32 idx);
 u32 MatchCall_GetRematchTableIdx(u32 idx);

@@ -75,9 +75,7 @@ SECTIONS {
         asm/berry_crush.o(.text*);
         src/berry_powder.o(.text*);
         src/dodrio_berry_picking.o(.text*);
-        asm/dodrio_berry_picking.o(.text*);
         src/pokemon_jump.o(.text*);
-        asm/pokemon_jump.o(.text*);
         src/rtc.o(.text*);
         src/main_menu.o(.text*);
         src/battle_controllers.o(.text*);
@@ -322,7 +320,6 @@ SECTIONS {
         src/pokenav_unk_8.o(.text*);
         asm/pokenav_unk_8.o(.text*);
         asm/pokenav_unk_9.o(.text*);
-        asm/pokenav_unk_10.o(.text*);
         src/pokenav_unk_10.o(.text*);
         src/pokenav_match_call_data.o(.text*);
         src/menu_specialized.o(.text*);
@@ -335,6 +332,7 @@ SECTIONS {
         src/contest_link_81D9DE4.o(.text*);
         src/gym_leader_rematch.o(.text*);
         src/unk_transition.o(.text*);
+        src/battle_debug.o(.text*);
         src/international_string_util.o(.text*);
         src/battle_debug.o(.text*);
     } =0
@@ -366,6 +364,7 @@ SECTIONS {
         src/librfu_intr.o(.text*);
         asm/librfu_intr.o(.text*);
         src/librfu_rfu.o(.text*);
+        src/librfu.o(.text*);
         asm/librfu.o(.text*);
         asm/libagbsyscall.o(.text*);
         *libgcc.a:_call_via_rX.o(.text*);
@@ -449,9 +448,7 @@ SECTIONS {
         data/berry_crush.o(.rodata);
         data/berry_powder.o(.rodata);
         src/dodrio_berry_picking.o(.rodata);
-        data/dodrio_berry_picking.o(.rodata);
         src/pokemon_jump.o(.rodata);
-        data/pokemon_jump.o(.rodata);
         src/rtc.o(.rodata);
         src/main_menu.o(.rodata);
         src/battle_controllers.o(.rodata);
@@ -603,7 +600,6 @@ SECTIONS {
         src/roamer.o(.rodata);
         src/battle_tower.o(.rodata);
         src/use_pokeblock.o(.rodata);
-        data/use_pokeblock.o(.rodata);
         src/battle_controller_wally.o(.rodata);
         src/player_pc.o(.rodata);
         src/intro.o(.rodata);
@@ -661,10 +657,13 @@ SECTIONS {
         src/pokenav_main_menu.o(.rodata);
         src/pokenav_match_call_ui.o(.rodata);
         src/pokenav_unk_1.o(.rodata);
-        data/pokenav.o(.rodata);
+        src/pokenav_unk_2.o(.rodata);
         src/pokenav_unk_3.o(.rodata);
         src/pokenav_unk_4.o(.rodata);
         src/pokenav_unk_5.o(.rodata);
+        src/pokenav_unk_7.o(.rodata);
+        src/pokenav_unk_8.o(.rodata);
+        src/pokenav_unk_9.o(.rodata);
         src/pokenav_unk_10.o(.rodata);
         src/pokenav_match_call_data.o(.rodata);
         src/menu_specialized.o(.rodata);
@@ -678,13 +677,13 @@ SECTIONS {
         src/walda_phrase.o(.rodata);
         src/gym_leader_rematch.o(.rodata);
         src/unk_transition.o(.rodata);
+        src/battle_debug.o(.rodata);
         data/text_input_strings.o(.rodata);
         data/fonts.o(.rodata);
         src/mystery_event_msg.o(.rodata);
         data/mystery_event_msg.o(.rodata);
         src/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
-        src/battle_debug.o(.rodata);
     } =0
 
     song_data :

@@ -3594,22 +3594,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                      && gBattleMons[target2].ability != 0 && gBattleMons[target2].hp != 0)
                     {
                         gActiveBattler = GetBattlerAtPosition(((Random() & 1) * 2) | side);
-                        gBattleMons[i].ability = gBattleMons[gActiveBattler].ability;
-                        gLastUsedAbility = gBattleMons[gActiveBattler].ability;
+                        gBattleStruct->tracedAbility[i] = gLastUsedAbility = gBattleMons[gActiveBattler].ability;
                         effect++;
                     }
                     else if (gBattleMons[target1].ability != 0 && gBattleMons[target1].hp != 0)
                     {
                         gActiveBattler = target1;
-                        gBattleMons[i].ability = gBattleMons[gActiveBattler].ability;
-                        gLastUsedAbility = gBattleMons[gActiveBattler].ability;
+                        gBattleStruct->tracedAbility[i] = gLastUsedAbility = gBattleMons[gActiveBattler].ability;
                         effect++;
                     }
                     else if (gBattleMons[target2].ability != 0 && gBattleMons[target2].hp != 0)
                     {
                         gActiveBattler = target2;
-                        gBattleMons[i].ability = gBattleMons[gActiveBattler].ability;
-                        gLastUsedAbility = gBattleMons[gActiveBattler].ability;
+                        gBattleStruct->tracedAbility[i] = gLastUsedAbility = gBattleMons[gActiveBattler].ability;
                         effect++;
                     }
                 }
@@ -3618,8 +3615,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                     gActiveBattler = target1;
                     if (gBattleMons[target1].ability && gBattleMons[target1].hp)
                     {
-                        gBattleMons[i].ability = gBattleMons[target1].ability;
-                        gLastUsedAbility = gBattleMons[target1].ability;
+                        gBattleStruct->tracedAbility[i] = gLastUsedAbility = gBattleMons[target1].ability;
                         effect++;
                     }
                 }
@@ -5753,6 +5749,10 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         break;
     }
 
+    // sandstorm sp.def boost for rock types
+    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SANDSTORM_ANY && !usesDefStat)
+        MulModifier(&modifier, UQ_4_12(1.5));
+
     return ApplyModifier(modifier, defStat);
 }
 
@@ -5775,7 +5775,8 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         dmg = ApplyModifier(UQ_4_12(1.5), dmg);
 
     // check burn
-    if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && gBattleMoves[move].effect != EFFECT_FACADE && abilityAtk != ABILITY_GUTS)
+    if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IS_MOVE_PHYSICAL(move)
+        && gBattleMoves[move].effect != EFFECT_FACADE && abilityAtk != ABILITY_GUTS)
         dmg = ApplyModifier(UQ_4_12(0.5), dmg);
 
     // check sunny/rain weather
@@ -6169,10 +6170,12 @@ bool32 CanMegaEvolve(u8 battlerId)
         mon = &gPlayerParty[gBattlerPartyIndexes[battlerId]];
 
     itemId = GetMonData(mon, MON_DATA_HELD_ITEM);
-    if (itemId != ITEM_ENIGMA_BERRY)
-        holdEffect = ItemId_GetHoldEffect(itemId);
-    else
+    if (USE_BATTLE_DEBUG && gBattleStruct->debugHoldEffects[battlerId])
+        holdEffect = gBattleStruct->debugHoldEffects[battlerId];
+    else if (itemId == ITEM_ENIGMA_BERRY)
         holdEffect = gEnigmaBerries[battlerId].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(itemId);
 
     if (holdEffect != HOLD_EFFECT_MEGA_STONE)
         return FALSE;
