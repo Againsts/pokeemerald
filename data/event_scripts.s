@@ -7175,3 +7175,7 @@ gText_082C877B:: @ 82C877B
 	.include "data/maps/AtroposKohlrabiIndoor1/scripts.inc"
 
 	.include "data/maps/LachesisBattleDome/scripts.inc"
+
+	.include "data/maps/AtroposQuitePC/scripts.inc"
+
+	.include "data/maps/AtroposQuitePC2/scripts.inc"

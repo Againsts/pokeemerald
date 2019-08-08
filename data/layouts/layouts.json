@@ -4709,6 +4709,26 @@
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_BattleDome",
             "width": 20
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposQuitePC/map.bin",
+            "border_filepath": "data/layouts/AtroposQuitePC/border.bin",
+            "height": 20,
+            "id": "LAYOUT_ATROPOS_QUITE_PC",
+            "name": "AtroposQuitePC_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 15
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposQuitePC2/map.bin",
+            "border_filepath": "data/layouts/AtroposQuitePC2/border.bin",
+            "height": 10,
+            "id": "LAYOUT_ATROPOS_QUITE_PC2",
+            "name": "AtroposQuitePC2_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 14
         }
     ],
     "layouts_table_label": "gMapLayouts"
