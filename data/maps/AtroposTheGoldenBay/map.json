@@ -26,7 +26,7 @@
     "name": "AtroposTheGoldenBay",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_SOOTOPOLIS_CITY",
+    "region_map_section": "MAPSEC_ATROPOS_THE_GOLDEN_BAY",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [

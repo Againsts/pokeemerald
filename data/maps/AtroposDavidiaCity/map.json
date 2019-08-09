@@ -30,7 +30,7 @@
     "name": "AtroposDavidiaCity",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
+    "region_map_section": "MAPSEC_ATROPOS_DAVIDIA_CITY",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [

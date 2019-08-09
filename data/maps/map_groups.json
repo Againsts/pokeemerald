@@ -586,8 +586,14 @@
         "SlateportCity_Mart"
     ],
     "gMapGroupAtroposIndoor": [
+        "AtroposVivianHouse1F",
+        "AtroposVivianHouse2F",
+        "AtroposKohlrabiIndoor1"
     ],
     "gMapGroupAtroposMisc": [
+        "AtroposKohlrabiBeach",
+        "AtroposKohlrabiSecretGarden",
+        "AtroposPrideRoad"
     ],
     "gMapGroupAtroposOutdoor": [
         "AtroposKohlrabiGarden",
@@ -613,7 +619,10 @@
         "AtroposRouteTheta",
         "AtroposRouteIota",
         "AtroposRouteKappa",
-        "AtroposPrideRoad"
+        "LachesisBattleDome",
+        "AtroposQuitePC",
+        "AtroposQuitePC2",
+        "Darkness"
     ],
     "group_order": [
         "gMapGroupAtroposOutdoor",

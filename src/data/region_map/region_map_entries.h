@@ -199,6 +199,33 @@ static const u8 sMapName_TerraCave[] = _("TERRA CAVE");
 static const u8 sMapName_DesertUnderpass[] = _("DESERT UNDERPASS");
 static const u8 sMapName_TrainerHill[] = _("TRAINER HILL");
 
+//SB
+static const u8 sMapName_AtroposMalusGarden[] = _("海棠镇");
+static const u8 sMapName_AtroposQuietTown[] = _("玉兰镇");
+static const u8 sMapName_AtroposGinkgoCity[] = _("银杏市");
+static const u8 sMapName_AtroposTheGoldenBay[] = _("九重湾");
+static const u8 sMapName_AtroposPlatiniumCity[] = _("剑花市");
+static const u8 sMapName_AtroposBanabaTown[] = _("紫薇镇");
+static const u8 sMapName_AtroposMacarangaTown[] = _("血桐镇");
+static const u8 sMapName_AtroposHuperTown[] = _("石杉镇");
+static const u8 sMapName_AtroposDavidiaCity[] = _("珙桐市");
+static const u8 sMapName_AtroposCurvifoliaTown[] = _("弯叶镇");
+static const u8 sMapName_AtroposCycasCity[] = _("苏铁市");
+static const u8 sMapName_AtroposBubbleIsland[] = _("长春岛");
+static const u8 sMapName_AtroposDidaVillage[] = _("百结镇");
+static const u8 sMapName_AtroposRouteAlpha[] = _("阿尔法道路");
+static const u8 sMapName_AtroposRouteBeta[] = _("贝塔道路");
+static const u8 sMapName_AtroposRouteGamma[] = _("伽马道路");
+static const u8 sMapName_AtroposRouteDelta[] = _("德尔塔道路");
+static const u8 sMapName_AtroposRouteEpsilon[] = _("伊普西龙道路");
+static const u8 sMapName_AtroposRouteZeta[] = _("截塔道路");
+static const u8 sMapName_AtroposRouteEta[] = _("艾塔道路");
+static const u8 sMapName_AtroposRouteTheta[] = _("西塔道路");
+static const u8 sMapName_AtroposRouteIota[] = _("约塔道路");
+static const u8 sMapName_AtroposRouteKappa[] = _("卡帕道路");
+static const u8 sMapName_AtroposRouteLambda[] = _("兰布达道路");
+static const u8 sMapName_AtroposRouteMu[] = _("穆道路");
+
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]           = { 4, 11, 1, 1, sMapName_LittlerootTown},
     [MAPSEC_OLDALE_TOWN]               = { 4,  9, 1, 1, sMapName_OldaleTown},
@@ -412,7 +439,32 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_DESERT_UNDERPASS]          = { 2,  0, 1, 1, sMapName_DesertUnderpass},
     [MAPSEC_ALTERING_CAVE_2]           = { 6,  8, 1, 1, sMapName_AlteringCave},
     [MAPSEC_NAVEL_ROCK2]               = { 0,  0, 1, 1, sMapName_NavelRock},
-    [MAPSEC_TRAINER_HILL]              = { 8,  4, 1, 1, sMapName_TrainerHill}
+    [MAPSEC_TRAINER_HILL]              = { 8,  4, 1, 1, sMapName_TrainerHill},
+    [MAPSEC_ATROPOS_KOHLRABI_GARDEN]   = { 0,  0, 1, 1, sMapName_AtroposMalusGarden},
+    [MAPSEC_ATROPOS_QUIET_TOWN]        = { 0,  0, 1, 1, sMapName_AtroposQuietTown},
+    [MAPSEC_ATROPOS_GINKGO_CITY]       = { 0,  0, 1, 1, sMapName_AtroposGinkgoCity},
+    [MAPSEC_ATROPOS_THE_GOLDEN_BAY]    = { 0,  0, 1, 1, sMapName_AtroposTheGoldenBay},
+    [MAPSEC_ATROPOS_PLATINIUM_CITY]    = { 0,  0, 1, 1, sMapName_AtroposPlatiniumCity},
+    [MAPSEC_ATROPOS_BANABA_TOWN]       = { 0,  0, 1, 1, sMapName_AtroposBanabaTown},
+    [MAPSEC_ATROPOS_MACARANGA_TOWN]    = { 0,  0, 1, 1, sMapName_AtroposMacarangaTown},
+    [MAPSEC_ATROPOS_HUPER_TOWN]        = { 0,  0, 1, 1, sMapName_AtroposHuperTown},
+    [MAPSEC_ATROPOS_DAVIDIA_CITY]      = { 0,  0, 1, 1, sMapName_AtroposDavidiaCity},
+    [MAPSEC_ATROPOS_CURVIFOLIA_TOWN]   = { 0,  0, 1, 1, sMapName_AtroposCurvifoliaTown},
+    [MAPSEC_ATROPOS_CYCAS_CITY]        = { 0,  0, 1, 1, sMapName_AtroposCycasCity},
+    [MAPSEC_ATROPOS_BUBBLE_ISLAND]     = { 0,  0, 1, 1, sMapName_AtroposBubbleIsland},
+    [MAPSEC_ATROPOS_DIDA_VILLAGE]      = { 0,  0, 1, 1, sMapName_AtroposDidaVillage},
+    [MAPSEC_ATROPOS_ROUTE_ALPHA]       = { 0,  0, 1, 1, sMapName_AtroposRouteAlpha},
+    [MAPSEC_ATROPOS_ROUTE_BETA]        = { 0,  0, 1, 1, sMapName_AtroposRouteBeta},
+    [MAPSEC_ATROPOS_ROUTE_GAMMA]       = { 0,  0, 1, 1, sMapName_AtroposRouteGamma},
+    [MAPSEC_ATROPOS_ROUTE_DELTA]       = { 0,  0, 1, 1, sMapName_AtroposRouteDelta},
+    [MAPSEC_ATROPOS_ROUTE_EPSILON]     = { 0,  0, 1, 1, sMapName_AtroposRouteEpsilon},
+    [MAPSEC_ATROPOS_ROUTE_ZETA]        = { 0,  0, 1, 1, sMapName_AtroposRouteZeta},
+    [MAPSEC_ATROPOS_ROUTE_ETA]         = { 0,  0, 1, 1, sMapName_AtroposRouteEta},
+    [MAPSEC_ATROPOS_ROUTE_THETA]       = { 0,  0, 1, 1, sMapName_AtroposRouteTheta},
+    [MAPSEC_ATROPOS_ROUTE_IOTA]        = { 0,  0, 1, 1, sMapName_AtroposRouteIota},
+    [MAPSEC_ATROPOS_ROUTE_KAPPA]       = { 0,  0, 1, 1, sMapName_AtroposRouteKappa},
+    [MAPSEC_ATROPOS_ROUTE_LAMBDA]      = { 0,  0, 1, 1, sMapName_AtroposRouteLambda},
+    [MAPSEC_ATROPOS_ROUTE_MU]          = { 0,  0, 1, 1, sMapName_AtroposRouteMu}
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

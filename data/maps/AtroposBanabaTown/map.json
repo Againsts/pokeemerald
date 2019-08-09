@@ -21,7 +21,7 @@
     "name": "AtroposBanabaTown",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_FORTREE_CITY",
+    "region_map_section": "MAPSEC_ATROPOS_BANABA_TOWN",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [

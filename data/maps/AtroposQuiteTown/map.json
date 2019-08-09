@@ -26,10 +26,31 @@
     "name": "AtroposQuiteTown",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_OLDALE_TOWN",
+    "region_map_section": "MAPSEC_ATROPOS_QUIET_TOWN",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ATROPOS_QUITE_PC",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 14,
+            "y": 11
+        },
+        {
+            "dest_map": "MAP_ATROPOS_QUITE_TOWN",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 3,
+            "y": 15
+        },
+        {
+            "dest_map": "MAP_ATROPOS_QUITE_TOWN",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 4,
+            "y": 7
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }

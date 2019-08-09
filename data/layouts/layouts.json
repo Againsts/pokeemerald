@@ -4649,6 +4649,96 @@
             "primary_tileset": "gTileset_AtroposOutdoorGeneral",
             "secondary_tileset": "gTileset_AtroposOutdoor_7",
             "width": 20
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposKohlrabiBeach/map.bin",
+            "border_filepath": "data/layouts/AtroposKohlrabiBeach/border.bin",
+            "height": 40,
+            "id": "LAYOUT_ATROPOS_KOHLRABI_BEACH",
+            "name": "AtroposKohlrabiBeach_Layout",
+            "primary_tileset": "gTileset_AtroposOutdoorGeneral",
+            "secondary_tileset": "gTileset_AtroposOutdoor_0",
+            "width": 40
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposKohlrabiSecretGarden/map.bin",
+            "border_filepath": "data/layouts/AtroposKohlrabiSecretGarden/border.bin",
+            "height": 20,
+            "id": "LAYOUT_ATROPOS_KOHLRABI_SECRET_GARDEN",
+            "name": "AtroposKohlrabiSecretGarden_Layout",
+            "primary_tileset": "gTileset_AtroposOutdoorGeneral",
+            "secondary_tileset": "gTileset_AtroposOutdoor_0",
+            "width": 20
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposVivianHouse1F/map.bin",
+            "border_filepath": "data/layouts/AtroposVivianHouse1F/border.bin",
+            "height": 12,
+            "id": "LAYOUT_ATROPOS_VIVIAN_HOUSE1F",
+            "name": "AtroposVivianHouse1F_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "width": 14
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposVivianHouse2F/map.bin",
+            "border_filepath": "data/layouts/AtroposVivianHouse2F/border.bin",
+            "height": 16,
+            "id": "LAYOUT_ATROPOS_VIVIAN_HOUSE2F",
+            "name": "AtroposVivianHouse2F_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "width": 16
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposKohlrabiIndoor1/map.bin",
+            "border_filepath": "data/layouts/AtroposKohlrabiIndoor1/border.bin",
+            "height": 23,
+            "id": "LAYOUT_ATROPOS_KOHLRABI_INDOOR1",
+            "name": "AtroposKohlrabiIndoor1_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 11
+        },
+        {
+            "blockdata_filepath": "data/layouts/LachesisBattleDome/map.bin",
+            "border_filepath": "data/layouts/LachesisBattleDome/border.bin",
+            "height": 10,
+            "id": "LAYOUT_LACHESIS_BATTLE_DOME",
+            "name": "LachesisBattleDome_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_BattleDome",
+            "width": 20
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposQuitePC/map.bin",
+            "border_filepath": "data/layouts/AtroposQuitePC/border.bin",
+            "height": 20,
+            "id": "LAYOUT_ATROPOS_QUITE_PC",
+            "name": "AtroposQuitePC_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 15
+        },
+        {
+            "blockdata_filepath": "data/layouts/AtroposQuitePC2/map.bin",
+            "border_filepath": "data/layouts/AtroposQuitePC2/border.bin",
+            "height": 10,
+            "id": "LAYOUT_ATROPOS_QUITE_PC2",
+            "name": "AtroposQuitePC2_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 14
+        },
+        {
+            "blockdata_filepath": "data/layouts/Darkness/map.bin",
+            "border_filepath": "data/layouts/Darkness/border.bin",
+            "height": 10,
+            "id": "LAYOUT_DARKNESS",
+            "name": "Darkness_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "width": 10
         }
     ],
     "layouts_table_label": "gMapLayouts"
