@@ -31,7 +31,7 @@
     "name": "AtroposRouteDelta",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_ROUTE_104",
+    "region_map_section": "MAPSEC_ATROPOS_ROUTE_DELTA",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [

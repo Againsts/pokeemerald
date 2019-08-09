@@ -15,7 +15,7 @@
     "name": "AtroposPlatiniumCity",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_MAUVILLE_CITY",
+    "region_map_section": "MAPSEC_ATROPOS_PLATINIUM_CITY",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [

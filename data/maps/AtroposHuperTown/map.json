@@ -21,7 +21,7 @@
     "name": "AtroposHuperTown",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_SOOTOPOLIS_CITY",
+    "region_map_section": "MAPSEC_ATROPOS_HUPER_TOWN",
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
