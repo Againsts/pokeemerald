@@ -4686,7 +4686,7 @@
             "height": 16,
             "id": "LAYOUT_ATROPOS_VIVIAN_HOUSE2F",
             "name": "AtroposVivianHouse2F_Layout",
-            "primary_tileset": "gTileset_Building",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
             "secondary_tileset": "gTileset_AtroposIndoor_0",
             "width": 16
         },
@@ -4696,8 +4696,8 @@
             "height": 23,
             "id": "LAYOUT_ATROPOS_KOHLRABI_INDOOR1",
             "name": "AtroposKohlrabiIndoor1_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 11
         },
         {
@@ -4729,6 +4729,16 @@
             "primary_tileset": "gTileset_AtroposIndoorGeneral",
             "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 14
+        },
+        {
+            "blockdata_filepath": "data/layouts/Darkness/map.bin",
+            "border_filepath": "data/layouts/Darkness/border.bin",
+            "height": 10,
+            "id": "LAYOUT_DARKNESS",
+            "name": "Darkness_Layout",
+            "primary_tileset": "gTileset_Building",
+            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "width": 10
         }
     ],
     "layouts_table_label": "gMapLayouts"
