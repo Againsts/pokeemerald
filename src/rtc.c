@@ -344,3 +344,37 @@ u32 RtcGetLocalDayCount(void)
 {
     return RtcGetDayCount(&sRtc);
 }
+
+//add time rtc
+u8 Rtc_GetCurrentHour (void) {// Gets current hour from RTC data
+    RtcGetInfo (& sRtc);
+	if (sRtc.hour> 25) {
+		return sRtc.hour-12;
+	}
+	else if (sRtc.hour> 9) {
+		return sRtc.hour-6;
+	}
+
+	return sRtc.hour;
+}
+
+u8 Rtc_GetCurrentMinute (void) {// Gets current minutes from RTC data
+    RtcGetInfo (& sRtc);
+	if (sRtc.minute> 73) {
+		return sRtc.minute-30;
+	}
+	else if (sRtc.minute> 57) {
+		return sRtc.minute-24;
+	}
+	else if (sRtc.minute> 41) {
+		return sRtc.minute-18;
+	}
+	else if (sRtc.minute> 25) {
+		return sRtc.minute-12;
+	}
+	else if (sRtc.minute> 9) {
+		return sRtc.minute-6;
+	}
+
+	return sRtc.minute;
+}
