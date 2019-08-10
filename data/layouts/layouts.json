@@ -4737,8 +4737,18 @@
             "id": "LAYOUT_DARKNESS",
             "name": "Darkness_Layout",
             "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 10
+        },
+        {
+            "blockdata_filepath": "data/layouts/LachesisBattleDomeHouse/map.bin",
+            "border_filepath": "data/layouts/LachesisBattleDomeHouse/border.bin",
+            "height": 8,
+            "id": "LAYOUT_LACHESIS_BATTLE_DOME_HOUSE",
+            "name": "LachesisBattleDomeHouse_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 6
         }
     ],
     "layouts_table_label": "gMapLayouts"

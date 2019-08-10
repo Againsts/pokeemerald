@@ -8,11 +8,11 @@
     "connections": null,
     "coord_events": [
     ],
-    "id": "MAP_DARKNESS",
-    "layout": "LAYOUT_DARKNESS",
+    "id": "MAP_LACHESIS_BATTLE_DOME_HOUSE",
+    "layout": "LAYOUT_LACHESIS_BATTLE_DOME_HOUSE",
     "map_type": "MAP_TYPE_UNUSED_1",
-    "music": "MUS_NONE",
-    "name": "Darkness",
+    "music": "MUS_B_DOME",
+    "name": "LachesisBattleDomeHouse",
     "object_events": [
     ],
     "region_map_section": "MAPSEC_LITTLEROOT_TOWN",

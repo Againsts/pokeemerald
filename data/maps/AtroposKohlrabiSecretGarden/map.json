@@ -16,14 +16,14 @@
     ],
     "id": "MAP_ATROPOS_KOHLRABI_SECRET_GARDEN",
     "layout": "LAYOUT_ATROPOS_KOHLRABI_SECRET_GARDEN",
-    "map_type": "MAP_TYPE_UNUSED_1",
+    "map_type": "MAP_TYPE_ROUTE",
     "music": "MUS_DAN02",
     "name": "AtroposKohlrabiSecretGarden",
     "object_events": [
     ],
-    "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+    "region_map_section": "MAPSEC_ATROPOS_KOHLRABI_GARDEN",
     "requires_flash": false,
-    "show_map_name": true,
+    "show_map_name": false,
     "warp_events": [
     ],
     "weather": "WEATHER_SUNNY"

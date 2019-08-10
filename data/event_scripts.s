@@ -7181,3 +7181,5 @@ gText_082C877B:: @ 82C877B
 	.include "data/maps/AtroposQuitePC2/scripts.inc"
 
 	.include "data/maps/Darkness/scripts.inc"
+
+	.include "data/maps/LachesisBattleDomeHouse/scripts.inc"

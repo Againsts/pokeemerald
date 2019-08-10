@@ -1607,6 +1607,8 @@ const u16 gUnknown_08DDD704[] = INCBIN_U16("graphics/unknown/unknown_DDD704.bin"
 
 const u16 gMessageBox_Pal[] = INCBIN_U16("graphics/text_window/message_box.gbapal");
 const u8 gMessageBox_Gfx[] = INCBIN_U8("graphics/text_window/message_box.4bpp");
+const u16 gMessageBox_Pal_black[] = INCBIN_U16("graphics/text_window/message_box_black.gbapal");
+const u8 gMessageBox_black_Gfx[] = INCBIN_U8("graphics/text_window/message_box_black.4bpp");
 
 const u32 gWallpaperIcon_Cross[] = INCBIN_U32("graphics/pokemon_storage/cross_icon.4bpp.lz");
 const u32 gWallpaperIcon_Bolt[] = INCBIN_U32("graphics/pokemon_storage/bolt_icon.4bpp.lz");

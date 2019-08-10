@@ -92,7 +92,7 @@
 #define VAR_POKELOT_RND1                     0x404B
 #define VAR_POKELOT_RND2                     0x404C
 #define VAR_POKELOT_PRIZE_PLACE              0x404D
-#define VAR_UNUSED_0x404E                    0x404E // Unused Var
+#define VAR_OPENING_STATE                    0x404E // SB
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_0x4050                           0x4050
 #define VAR_ROUTE102_ACCESSIBLE              0x4051

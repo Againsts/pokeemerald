@@ -78,6 +78,20 @@ static const struct WindowTemplate sStandardTextBox_WindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
+static const struct WindowTemplate sEpicTextBox_WindowTemplates[] =
+{
+	{
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 8,
+        .width = 27,
+        .height = 4,
+        .paletteNum = 15,
+        .baseBlock = 0x194
+    },
+    DUMMY_WIN_TEMPLATE
+};
+
 static const struct WindowTemplate sYesNo_WindowTemplates =
 {
     .bg = 0,
@@ -138,7 +152,14 @@ void task_free_buf_after_copying_tile_data_to_vram(u8 taskId);
 
 void InitStandardTextBoxWindows(void)
 {
-    InitWindows(sStandardTextBox_WindowTemplates);
+	if (FlagGet(FLAG_TEXTBOX_MIDDLE_BLACK) == TRUE)
+	{
+		InitWindows(sEpicTextBox_WindowTemplates);
+	}
+	else
+	{
+		InitWindows(sStandardTextBox_WindowTemplates);
+	}
     sStartMenuWindowId = 0xFF;
     sMapNamePopupWindowId = 0xFF;
 }

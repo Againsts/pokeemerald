@@ -593,7 +593,8 @@
     "gMapGroupAtroposMisc": [
         "AtroposKohlrabiBeach",
         "AtroposKohlrabiSecretGarden",
-        "AtroposPrideRoad"
+        "AtroposPrideRoad",
+        "LachesisBattleDomeHouse"
     ],
     "gMapGroupAtroposOutdoor": [
         "AtroposKohlrabiGarden",
