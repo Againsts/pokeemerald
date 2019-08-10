@@ -57,6 +57,7 @@
 #include "constants/weather.h"
 #include "constants/metatile_labels.h"
 #include "palette.h"
+#include "naming_screen.h"
 
 EWRAM_DATA bool8 gBikeCyclingChallenge = FALSE;
 EWRAM_DATA u8 gBikeCollisions = 0;
@@ -1077,7 +1078,7 @@ static void PCTurnOnEffect_0(struct Task *task)
     task->data[3]++;
 }
 
-// enum pc location, 
+// enum pc location,
 static void PCTurnOnEffect_1(s16 flag, s8 dx, s8 dy)
 {
     u16 tileId = 0;
@@ -4196,4 +4197,117 @@ void sub_813BF60(void)
 u8 sub_813BF7C(void)
 {
     return sub_813BADC(gSpecialVar_0x8004);
+}
+
+void CreateWhiteSkuldParty(void)
+{
+    u16 monData;
+    CreateMon(&gPlayerParty[0], SPECIES_TOGEKISS, 53, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[1], SPECIES_SABLEYE, 54, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[2], SPECIES_SNORLAX, 57, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[3], SPECIES_ALAKAZAM, 55, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[4], SPECIES_KROOKODILE, 61, 0x20, FALSE, 0, FALSE, 0);
+//TOGEKISS
+    monData = 2;
+    SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
+	monData = ITEM_SITRUS_BERRY;
+	SetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_PROTECT;
+    SetMonData(&gPlayerParty[0], MON_DATA_MOVE1, &monData);
+    SetMonData(&gPlayerParty[0], MON_DATA_PP1, &gBattleMoves[monData].pp);
+    monData = MOVE_DOUBLE_TEAM;
+    SetMonData(&gPlayerParty[0], MON_DATA_MOVE2, &monData);
+    SetMonData(&gPlayerParty[0], MON_DATA_PP2, &gBattleMoves[monData].pp);
+    monData = MOVE_SKY_ATTACK;
+    SetMonData(&gPlayerParty[0], MON_DATA_MOVE3, &monData);
+    SetMonData(&gPlayerParty[0], MON_DATA_PP3, &gBattleMoves[monData].pp);
+    monData = MOVE_SAFEGUARD;
+    SetMonData(&gPlayerParty[0], MON_DATA_MOVE4, &monData);
+    SetMonData(&gPlayerParty[0], MON_DATA_PP4, &gBattleMoves[monData].pp);
+	//SABLEYE
+    monData = TRUE;
+    SetMonData(&gPlayerParty[1], MON_DATA_ABILITY_NUM, &monData);
+	monData = ITEM_SABLENITE;
+	SetMonData(&gPlayerParty[1], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_MEAN_LOOK;
+    SetMonData(&gPlayerParty[1], MON_DATA_MOVE1, &monData);
+    SetMonData(&gPlayerParty[1], MON_DATA_PP1, &gBattleMoves[monData].pp);
+    monData = MOVE_QUASH;
+    SetMonData(&gPlayerParty[1], MON_DATA_MOVE2, &monData);
+    SetMonData(&gPlayerParty[1], MON_DATA_PP2, &gBattleMoves[monData].pp);
+    monData = MOVE_SHADOW_CLAW;
+    SetMonData(&gPlayerParty[1], MON_DATA_MOVE3, &monData);
+    SetMonData(&gPlayerParty[1], MON_DATA_PP3, &gBattleMoves[monData].pp);
+    monData = MOVE_NASTY_PLOT;
+    SetMonData(&gPlayerParty[1], MON_DATA_MOVE4, &monData);
+    SetMonData(&gPlayerParty[1], MON_DATA_PP4, &gBattleMoves[monData].pp);
+
+//SNORLAX
+    monData = FALSE;
+    SetMonData(&gPlayerParty[2], MON_DATA_ABILITY_NUM, &monData);
+	monData = ITEM_LEFTOVERS;
+	SetMonData(&gPlayerParty[2], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_AMNESIA;
+    SetMonData(&gPlayerParty[2], MON_DATA_MOVE1, &monData);
+    SetMonData(&gPlayerParty[2], MON_DATA_PP1, &gBattleMoves[monData].pp);
+    monData = MOVE_REST;
+    SetMonData(&gPlayerParty[2], MON_DATA_MOVE2, &monData);
+    SetMonData(&gPlayerParty[2], MON_DATA_PP2, &gBattleMoves[monData].pp);
+    monData = MOVE_TOXIC;
+    SetMonData(&gPlayerParty[2], MON_DATA_MOVE3, &monData);
+    SetMonData(&gPlayerParty[2], MON_DATA_PP3, &gBattleMoves[monData].pp);
+    monData = MOVE_SLEEP_TALK;
+    SetMonData(&gPlayerParty[2], MON_DATA_MOVE4, &monData);
+    SetMonData(&gPlayerParty[2], MON_DATA_PP4, &gBattleMoves[monData].pp);
+
+//ALAKAZAM
+    monData = FALSE;
+    SetMonData(&gPlayerParty[3], MON_DATA_ABILITY_NUM, &monData);
+	monData = ITEM_TWISTED_SPOON;
+	SetMonData(&gPlayerParty[3], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_LASER_FOCUS;
+    SetMonData(&gPlayerParty[3], MON_DATA_MOVE1, &monData);
+    SetMonData(&gPlayerParty[3], MON_DATA_PP1, &gBattleMoves[monData].pp);
+    monData = MOVE_WONDER_ROOM;
+    SetMonData(&gPlayerParty[3], MON_DATA_MOVE2, &monData);
+    SetMonData(&gPlayerParty[3], MON_DATA_PP2, &gBattleMoves[monData].pp);
+    monData = MOVE_PROTECT;
+    SetMonData(&gPlayerParty[3], MON_DATA_MOVE3, &monData);
+    SetMonData(&gPlayerParty[3], MON_DATA_PP3, &gBattleMoves[monData].pp);
+    monData = MOVE_DOUBLE_TEAM;
+    SetMonData(&gPlayerParty[3], MON_DATA_MOVE4, &monData);
+    SetMonData(&gPlayerParty[3], MON_DATA_PP4, &gBattleMoves[monData].pp);
+
+	//KROOKODILE
+    monData = TRUE;
+    SetMonData(&gPlayerParty[4], MON_DATA_ABILITY_NUM, &monData);
+	monData = ITEM_METRONOME;
+	SetMonData(&gPlayerParty[4], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_FOUL_PLAY;
+    SetMonData(&gPlayerParty[4], MON_DATA_MOVE1, &monData);
+    SetMonData(&gPlayerParty[4], MON_DATA_PP1, &gBattleMoves[monData].pp);
+    monData = MOVE_SUBSTITUTE;
+    SetMonData(&gPlayerParty[4], MON_DATA_MOVE2, &monData);
+    SetMonData(&gPlayerParty[4], MON_DATA_PP2, &gBattleMoves[monData].pp);
+    monData = MOVE_BULK_UP;
+    SetMonData(&gPlayerParty[4], MON_DATA_MOVE3, &monData);
+    SetMonData(&gPlayerParty[4], MON_DATA_PP3, &gBattleMoves[monData].pp);
+    monData = MOVE_OUTRAGE;
+    SetMonData(&gPlayerParty[4], MON_DATA_MOVE4, &monData);
+    SetMonData(&gPlayerParty[4], MON_DATA_PP4, &gBattleMoves[monData].pp);
+}
+
+const u8 gText_DefaultNameGrey[] = _("格雷");
+
+void NamingScreen(void)
+{
+	const u8* name;
+  u8 i;
+
+  name = gText_DefaultNameGrey;
+  for (i = 0; i < 7; i++)
+      gSaveBlock2Ptr->playerName[i] = name[i];
+  gSaveBlock2Ptr->playerName[7] = 0xFF;
+	DoNamingScreen(0, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+
 }

@@ -1781,10 +1781,17 @@ static void Task_NewGameBirchSpeech_FadePlayerToWhite(u8 taskId)
     }
 }
 
+const u8 gText_DefaultNameWhite[] = _("怀特");
+
 static void Task_NewGameBirchSpeech_Cleanup(u8 taskId)
 {
+  u8 i;
+  const u8* name;
 	gSaveBlock2Ptr->playerGender = MALE;
-	NewGameBirchSpeech_SetDefaultPlayerName(1);
+  name = gText_DefaultNameWhite;
+  for (i = 0; i < 7; i++)
+      gSaveBlock2Ptr->playerName[i] = name[i];
+  gSaveBlock2Ptr->playerName[7] = 0xFF;
     if (!gPaletteFade.active)
     {
         FreeAllWindowBuffers();
