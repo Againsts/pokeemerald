@@ -42,7 +42,8 @@ movement_LachesisBattleDomeHouse2:
 	emote_question_mark
 	delay_16
 	step_end
-	
+
+/*
 Text_LachesisBattleDomeHouse1:
 	.string "...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}\l"
 	.string "Miwako: Honey,\l"
@@ -71,31 +72,33 @@ Text_LachesisBattleDomeHouse3:
 	.string "Why would you do that...?\l"	
 	.string "...{PAUSE 0x20}\l"
 	.string "??????: You deserve this, Skuld...$"
+*/
 
-/*
 Text_LachesisBattleDomeHouse1:
 	.string "...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}\l"
-	.string "美和子:亲爱的,\l"
-	.string "今天你在电视上最后那场对战,\n"
-	.string "小芊她说白的样子帅爆了。\l"
-	.string "白:是吗？那真是太好了!\p"
-	.string "小芊她睡了吧。\l"
-	.string "美和子:是啊,她很期待明天吧,\l"
-	.string "白把冠军杯捧回家的时候。\l"
-	.string "白:嗯,势在必得。\l"
-	.string "我承诺过她......{PAUSE 0x50}\p"
-	.string "美和子:白！白！外边有人！$"
-
+	.string "美和子: 亲爱的,\l"
+	.string "今天你在电视上的表现简直帅呆了,\n"
+	.string "你现在都成为小芊的偶像了.\l"
+	.string "怀特: 很开心听到你这么说...\l"
+	.string "小芊睡着了吗?\p"
+	.string "美和子: 恩,她已经很累了,\n"
+	.string "她等不及到明天已经去睡了,\l"
+	.string "她知道你一定会赢得最后的胜利.\p"
+	.string "怀特: 是啊,我答应过她一定会赢的...{PAUSE 0x50}\p"
+	.string "美和子: 等下! \l"
+	.string "外面有人!\l"
+	.string "啊啊啊!!!\l"
+	.string "...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}$"
+	
 Text_LachesisBattleDomeHouse2:
-	.string "白:美和子！美和子！美和子！\n"
-	.string "...{PAUSE 0x20}...{PAUSE 0x20}...{PAUSE 0x20}...{PAUSE 0x20}\l"
-	.string "??????:斯古尔特,\l"
-	.string "去克罗多的尽头吧！\l"
-	.string "如果你还想要你的所爱之人。$"
+	.string "怀特: 亲爱的?! 美和子?!\n"
+	.string "...{PAUSE 0x20}...{PAUSE 0x20}...{PAUSE 0x20}...{PAUSE 0x20}\p"
+	.string "??????: Skuld,{PAUSE 0x20}\l"
+	.string "如果你还想让她活着...\l"
+	.string "我想你应该知道,你要去哪里...$"
 
 Text_LachesisBattleDomeHouse3:
-	.string "白:这声音...{PAUSE 0x20}\l"
-	.string "难道说你是...{PAUSE 0x20}？\l"	
-	.string "...{PAUSE 0x10}\l"
-	.string "??????:真不愧是斯古尔特呢...$"
-*/
+	.string "怀特: 这个声音是...{PAUSE 0x20}\l"
+	.string "你为什么要这样对我...?\l"	
+	.string "...{PAUSE 0x20}\l"
+	.string "??????: 这是你应得的, 斯古尔特!$"

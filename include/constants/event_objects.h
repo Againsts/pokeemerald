@@ -240,7 +240,8 @@
 #define EVENT_OBJ_GFX_LINK_RS_MAY                236
 #define EVENT_OBJ_GFX_LUGIA                      237
 #define EVENT_OBJ_GFX_HOOH                       238
-#define EVENT_OBJ_GFX_BARD_2                     239
+#define EVENT_OBJ_GFX_WHITE_NORMAL               239
+#define EVENT_OBJ_GFX_BARD_2                     240
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.

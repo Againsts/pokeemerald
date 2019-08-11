@@ -89,42 +89,7 @@ Darkness_EventScript7::
 	releaseall
 	end
 
-Text_OP1:
-	.string "From the branch which seemed,\n"
-	.string "so slender and fair,\n"
-	.string "Came a harmful shaft.$"
-
-Text_TimeAndPlace1:
-	.string "Lachesis region, VesuviaCity,\n"
-	.string "The Battle Dome,\n"
-	.string "9th August 386...{PAUSE 0x50}$"
-
-Text_TimeAndPlace2:
-	.string "At night...$"
-
-Text_OP2:
-	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0xa0}\n"
-	.string "Fate... No one alive has ever escaped it.$"
-
-Text_TimeAndPlace3:
-	.string "Atropos Region, Malus Garden,\n"
-	.string "The beach nearby,\n"
-	.string "10th August 386...{PAUSE 0x50}$"
-
-Text_OP3:
-	.string "Dark grows the sun,\n"
-	.string "and in summer soon.\n"
-	.string "Come mighty storms,\n"
-	.string "would you know yet more?$"
-
-Text_TimeAndPlace4:
-	.string "12nd November 386...{PAUSE 0x50}$"
-
-Text_TimeAndPlace5:
-	.string "Next day...{PAUSE 0x50}$"
-
-
-/*中文
+/*
 Text_OP1:
 	.string "From the branch which seemed,\n"
 	.string "so slender and fair,\n"
@@ -160,5 +125,38 @@ Text_TimeAndPlace5:
 	.string "Next day...{PAUSE 0x50}$"
 */
 
+Text_OP1:
+	.string "懈寄生娇柔而又美丽,\n"
+	.string "茎杆纤细生长在平川。\n"
+	.string "岂能料到细弱的树苗,\n"
+	.string "居然制成致命的利箭。$"
 
+Text_TimeAndPlace1:
+	.string "拉刻西斯地区,符山市,\n"
+	.string "对战巨蛋,\n"
+	.string "代提历386年8月9日...{PAUSE 0x50}$"
+
+Text_TimeAndPlace2:
+	.string "夜半...$"
+
+Text_OP2:
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0xa0}\n"
+	.string "没有人能逃过命运...没有。$"
+
+Text_TimeAndPlace3:
+	.string "阿特波斯地区,海棠花园,\n"
+	.string "海滩旁,\n"
+	.string "386年8月10日...{PAUSE 0x50}$"
+
+Text_OP3:
+	.string "来年夏天太阳一片漆黑,\n"
+	.string "天气反复无常坏得出奇。\n"
+	.string "你可曾听说此事,\n"
+	.string "或者还知道别的？$"
+
+Text_TimeAndPlace4:
+	.string "代提历386年11月12日...{PAUSE 0x50}$"
+
+Text_TimeAndPlace5:
+	.string "次日...{PAUSE 0x50}$"
 
