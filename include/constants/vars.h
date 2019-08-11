@@ -96,7 +96,7 @@
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_0x4050                           0x4050
 #define VAR_ROUTE102_ACCESSIBLE              0x4051
-#define VAR_UNUSED_0x4052                    0x4052 // Unused Var
+#define VAR_RESCUE_VIVIAN                    0x4052 // SB
 #define VAR_LAVARIDGE_RIVAL_STATE            0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054
 #define VAR_UNUSED_0x4055                    0x4055 // Unused Var

@@ -14,8 +14,8 @@ AtroposVivianHouse2F_EventScript1::
 	setflag FLAG_TEXTBOX_MIDDLE_BLACK
 	setvar VAR_OPENING_STATE 5
 	delay 80
-	removeobject 2
-	removeobject 3
+	hideobjectat 2, MAP_ATROPOS_VIVIAN_HOUSE2F
+	hideobjectat 3, MAP_ATROPOS_VIVIAN_HOUSE2F
 	setflag FLAG_UNUSED_0x021
 	warpsilent MAP_DARKNESS, 255, -1, -1
 	releaseall
@@ -31,7 +31,6 @@ AtroposVivianHouse2F_EventScript2::
 	waitmovement 0
 	msgbox Text_AtroposVivianHouse2F_3, MSGBOX_DEFAULT
 	setvar VAR_OPENING_STATE 6
-	removeobject 1
 	setflag FLAG_UNUSED_0x022
 	warpsilent MAP_DARKNESS, 255, -1, -1
 	releaseall

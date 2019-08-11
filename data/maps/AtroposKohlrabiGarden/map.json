@@ -23,6 +23,42 @@
         }
     ],
     "coord_events": [
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 1,
+            "y": 10
+        },
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 1,
+            "y": 11
+        },
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 19,
+            "y": 8
+        },
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 19,
+            "y": 9
+        }
     ],
     "id": "MAP_ATROPOS_KOHLRABI_GARDEN",
     "layout": "LAYOUT_ATROPOS_KOHLRABI_GARDEN",
@@ -37,7 +73,7 @@
     "warp_events": [
         {
             "dest_map": "MAP_ATROPOS_VIVIAN_HOUSE1F",
-            "dest_warp_id": 2,
+            "dest_warp_id": 1,
             "elevation": 0,
             "x": 14,
             "y": 15

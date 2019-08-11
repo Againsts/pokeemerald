@@ -145,7 +145,7 @@ Text_OP2:
 
 Text_TimeAndPlace3:
 	.string "阿特波斯地区,海棠花园,\n"
-	.string "海滩旁,\n"
+	.string "附近海滩,\n"
 	.string "386年8月10日...{PAUSE 0x50}$"
 
 Text_OP3:
