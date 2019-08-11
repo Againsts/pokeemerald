@@ -83,11 +83,11 @@ static const struct WindowTemplate sEpicTextBox_WindowTemplates[] =
 	{
         .bg = 0,
         .tilemapLeft = 2,
-        .tilemapTop = 8,
+        .tilemapTop = 7,
         .width = 27,
-        .height = 4,
+        .height = 8,
         .paletteNum = 15,
-        .baseBlock = 0x194
+        .baseBlock = 0x128
     },
     DUMMY_WIN_TEMPLATE
 };

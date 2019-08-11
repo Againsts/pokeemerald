@@ -17,7 +17,7 @@
     ],
     "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
     "requires_flash": false,
-    "show_map_name": true,
+    "show_map_name": false,
     "warp_events": [
     ],
     "weather": "WEATHER_SUNNY"

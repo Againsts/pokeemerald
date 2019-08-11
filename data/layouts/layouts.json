@@ -4687,7 +4687,7 @@
             "id": "LAYOUT_ATROPOS_VIVIAN_HOUSE2F",
             "name": "AtroposVivianHouse2F_Layout",
             "primary_tileset": "gTileset_AtroposIndoorGeneral",
-            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 16
         },
         {
