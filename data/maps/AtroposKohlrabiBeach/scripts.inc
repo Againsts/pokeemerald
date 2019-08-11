@@ -149,6 +149,7 @@ movement_AtroposKohlrabiBeach6:
 	Face_up
 	step_end
 
+/*
 Text_AtroposKohlrabiBeach1:
 	.string "Vivian: Sir, are you okay sir?\l"
 	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\p"
@@ -177,3 +178,33 @@ Text_AtroposKohlrabiBeach4:
 	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\p"
 	.string "Vivian: It gonna rain,\n"
 	.string "let's go home...$"
+*/
+
+Text_AtroposKohlrabiBeach1:
+	.string "薇薇安: 先生, 你还好吗?\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\p"
+	.string "薇薇安: 微弱的呼吸声...\l"
+	.string "... ...救命啊!$"
+
+Text_AtroposKohlrabiBeach2:
+	.string "薇薇安: 我就是在这里找到你的.\l"
+	.string "当时你差点没了呼吸.\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\p"
+	.string "薇薇安: 医生说你的头脑受到创伤,\l"
+	.string "以后或许有机会恢复记忆\l"
+	.string "别急着勉强自己.\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\p"
+	.string "对了...\l"
+	.string "薇薇安: 我该怎么称呼你?$"
+
+Text_AtroposKohlrabiBeach3:
+	.string "薇薇安: 是{PLAYER}吗?$"
+	
+Text_AtroposKohlrabiBeach4:
+	.string "薇薇安: {PLAYER}!\n"
+	.string "请容许我在自我介绍一次!\p"
+	.string "我是薇薇安,\n"
+	.string "很高兴认识你.\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\p"
+	.string "薇薇安: 天色已黑,\n"
+	.string "快回家吧...$"

@@ -1,4 +1,4 @@
-{
+﻿{
   "wild_encounter_groups": [
     {
       "label": "gWildMonHeaders",
@@ -11419,6 +11419,1302 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_ALPHA",
+          "base_label": "gMAP_ATROPOS_ROUTE_ALPHA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_BETA",
+          "base_label": "gMAP_ATROPOS_ROUTE_BETA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_GAMMA",
+          "base_label": "gMAP_ATROPOS_ROUTE_GAMMA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_DELTA",
+          "base_label": "gMAP_ATROPOS_ROUTE_DELTA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_EPSILON",
+          "base_label": "gMAP_ATROPOS_ROUTE_EPSILON",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_ZETA",
+          "base_label": "gMAP_ATROPOS_ROUTE_ZETA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_ETA",
+          "base_label": "gMAP_ATROPOS_ROUTE_ETA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_THETA",
+          "base_label": "gMAP_ATROPOS_ROUTE_THETA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ATROPOS_ROUTE_IOTA",
+          "base_label": "gMAP_ATROPOS_ROUTE_IOTA",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIDGEY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_POOCHYENA"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BIDOOF"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_STARLY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PATRAT"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_BUNNELBY"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIKACHU"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+			  {
+                "min_level": 2,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
         }
       ]
     },
@@ -11427,6 +12723,7 @@
       "for_maps": false,
       "encounters": [
         {
+          "map": "",
           "base_label": "gBattlePyramid_1",
           "land_mons": {
             "encounter_rate": 4,
@@ -11495,6 +12792,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePyramid_2",
           "land_mons": {
             "encounter_rate": 4,
@@ -11563,6 +12861,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePyramid_3",
           "land_mons": {
             "encounter_rate": 4,
@@ -11631,6 +12930,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePyramid_4",
           "land_mons": {
             "encounter_rate": 4,
@@ -11699,6 +12999,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePyramid_5",
           "land_mons": {
             "encounter_rate": 4,
@@ -11767,6 +13068,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePyramid_6",
           "land_mons": {
             "encounter_rate": 4,
@@ -11835,6 +13137,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePyramid_7",
           "land_mons": {
             "encounter_rate": 8,
@@ -11909,6 +13212,7 @@
       "for_maps": false,
       "encounters": [
         {
+          "map": "",
           "base_label": "gBattlePike_1",
           "land_mons": {
             "encounter_rate": 10,
@@ -11977,6 +13281,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePike_2",
           "land_mons": {
             "encounter_rate": 10,
@@ -12045,6 +13350,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePike_3",
           "land_mons": {
             "encounter_rate": 10,
@@ -12113,6 +13419,7 @@
           }
         },
         {
+          "map": "",
           "base_label": "gBattlePike_4",
           "land_mons": {
             "encounter_rate": 10,

@@ -45,6 +45,7 @@ movement_AtroposVivianHouse2F_2:
 	face_right
 	step_end
 
+/*
 Text_AtroposVivianHouse2F_1:
 	.string "Doctor: He's stable now...\l"
 	.string "if Vivian found him late,\n"
@@ -69,4 +70,31 @@ Text_AtroposVivianHouse2F_3:
 	.string "... {PAUSE 0x30} ...{PAUSE 0x30}Who...{PAUSE 0x50}am I?...\p"
 	.string "Vivian: You...\n"
 	.string "You don't remember your name?\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}$"
+*/
+
+Text_AtroposVivianHouse2F_1:
+	.string "医生: 他的脉象稳定下来了...\l"
+	.string "如果再迟点发现他,\n"
+	.string "就危险了...\p"
+	.string "亚伯汗: 谢谢医生。\l"
+	.string "希望他能早点醒来...{PAUSE 0x20} \p"
+	.string "薇薇安: 爸爸, 他为什么\n"
+	.string "会差点溺毙?\p"
+	.string "亚伯汗: 不知道呢, \n"
+	.string "奇怪的事总是发生.\l"
+	.string "哼...\l"
+	.string "他的穿着不像本地人...\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}$"
+		
+Text_AtroposVivianHouse2F_2:
+	.string "怀特: 啊!$"
+	
+Text_AtroposVivianHouse2F_3:
+	.string "薇薇安: 啊,你终于醒了!\l"
+	.string "你睡了足足三个月...\l"
+	.string "三...{PAUSE 0x30} 个月?\n"
+	.string "... {PAUSE 0x30} ...{PAUSE 0x30}我...{PAUSE 0x50}是谁?...\p"
+	.string "薇薇安: 你...\n"
+	.string "难道不记得自己的名字了?\l"
 	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}$"

@@ -88,12 +88,12 @@ Text_LachesisBattleDomeHouse1:
 	.string "美和子: 等下! \l"
 	.string "外面有人!\l"
 	.string "啊啊啊!!!\l"
-	.string "...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}$"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}$"
 	
 Text_LachesisBattleDomeHouse2:
 	.string "怀特: 亲爱的?! 美和子?!\n"
 	.string "...{PAUSE 0x20}...{PAUSE 0x20}...{PAUSE 0x20}...{PAUSE 0x20}\p"
-	.string "??????: Skuld,{PAUSE 0x20}\l"
+	.string "??????: 斯古尔特,{PAUSE 0x20}\l"
 	.string "如果你还想让她活着...\l"
 	.string "我想你应该知道,你要去哪里...$"
 
