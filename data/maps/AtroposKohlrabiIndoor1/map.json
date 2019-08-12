@@ -19,6 +19,27 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ATROPOS_KOHLRABI_GARDEN",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 2,
+            "y": 9
+        },
+        {
+            "dest_map": "MAP_ATROPOS_KOHLRABI_INDOOR1",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 11,
+            "y": 2
+        },
+        {
+            "dest_map": "MAP_ATROPOS_KOHLRABI_INDOOR1",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 10,
+            "y": 17
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }

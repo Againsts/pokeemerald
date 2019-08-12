@@ -37,16 +37,16 @@
 #define FLAG_TEMP_1E    0x1E
 #define FLAG_TEMP_1F    0x1F
 
-#define FLAG_TEXTBOX_MIDDLE_BLACK    0x20 // SB
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_RESCUE_VIVIAN   0x23 // SB
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
+#define FLAG_TEXTBOX_MIDDLE_BLACK    0x20 // SB Flag
+#define FLAG_UNUSED_0x021    0x21 // SB Flag
+#define FLAG_UNUSED_0x022    0x22 // SB Flag
+#define FLAG_RESCUE_VIVIAN   0x23 // SB Flag
+#define FLAG_HIDE_VIVIAN     0x24 // SB Flag
+#define FLAG_HIDE_VIVAIN_OP  0x25 // SB Flag
+#define FLAG_HIDE_VIVIAN_OUTSIDE    0x26 // SB Flag
+#define FLAG_UNUSED_0x027    0x27 // SB Flag
+#define FLAG_UNUSED_0x028    0x28 // SB Flag
+#define FLAG_UNUSED_0x029    0x29 // SB Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag

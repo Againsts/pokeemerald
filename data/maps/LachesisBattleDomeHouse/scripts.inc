@@ -75,7 +75,7 @@ Text_LachesisBattleDomeHouse3:
 */
 
 Text_LachesisBattleDomeHouse1:
-	.string "...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}...{PAUSE 0x30}\l"
+	.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}\l"
 	.string "美和子: 亲爱的,\l"
 	.string "今天你在电视上的表现简直帅呆了,\n"
 	.string "你现在都成为小芊的偶像了.\l"

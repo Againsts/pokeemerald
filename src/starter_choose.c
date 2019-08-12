@@ -10,6 +10,7 @@
 #include "palette.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "random.h"
 #include "scanline_effect.h"
 #include "sound.h"
 #include "sprite.h"
@@ -124,11 +125,49 @@ static const u8 gStarterChoose_LabelCoords[][2] =
     {0x08, 0x04},
 };
 
-static const u16 sStarterMon[STARTER_MON_COUNT] =
+static const u16 sStarterMon[][STARTER_MON_COUNT] =
 {
+  {
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_SQUIRTLE,
+  },
+  {
+    SPECIES_BAYLEEF,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+  },
+  {
     SPECIES_TREECKO,
     SPECIES_TORCHIC,
     SPECIES_MUDKIP,
+  },
+  {
+    SPECIES_TURTWIG,
+    SPECIES_CHIMCHAR,
+    SPECIES_PIPLUP,
+  },
+  {
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_OSHAWOTT,
+  },
+  {
+    SPECIES_CHESPIN,
+    SPECIES_FENNEKIN,
+    SPECIES_FROAKIE,
+  },
+  {
+    SPECIES_ROWLET,
+    SPECIES_LITTEN,
+    SPECIES_POPPLIO,
+  },
+  {
+    //These starter is exclusive
+    SPECIES_BELDUM,
+    SPECIES_LARVITAR,
+    SPECIES_TOGEPI,
+  }
 };
 
 static const struct BgTemplate gUnknown_085B1E00[3] =
@@ -364,9 +403,12 @@ static const struct SpriteTemplate gUnknown_085B1F40 =
 // .text
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
+  //Generate over 7 generation and one rare list
+  u8 Generation;
+  Generation = VarGet(VAR_STARTER_GENERATION);
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    return sStarterMon[Generation][chosenStarterId];
 }
 
 static void VblankCB_StarterChoose(void)
@@ -385,6 +427,14 @@ void CB2_ChooseStarter(void)
     u16 savedIme;
     u8 taskId;
     u8 spriteId;
+    //To RNG Generation
+    u8 generation;
+    if (Random() % 100 == 0)
+      generation = 7;// To make generation higher rarity
+    else
+      generation = Random() % 7;
+
+    VarSet(VAR_STARTER_GENERATION, generation);
 
     SetVBlankCallback(NULL);
 
@@ -584,8 +634,8 @@ static void CreateStarterPokemonLabel(u8 selection)
     const u8 *speciesName;
     s32 width;
     u8 labelLeft, labelRight, labelTop, labelBottom;
-
     u16 species = GetStarterPokemon(selection);
+
     CopyMonCategoryText(SpeciesToNationalPokedexNum(species), text);
     speciesName = gSpeciesNames[species];
 

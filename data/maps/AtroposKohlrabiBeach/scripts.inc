@@ -82,6 +82,8 @@ AtroposKohlrabiBeach_Eventscript4::
 	msgbox Text_AtroposKohlrabiBeach4, MSGBOX_DEFAULT
 	setvar VAR_OPENING_STATE 7
 	setflag FLAG_TEXTBOX_MIDDLE_BLACK
+	setflag FLAG_HIDE_VIVAIN_OP
+	setflag FLAG_HIDE_VIVIAN
 	warpsilent MAP_DARKNESS, 255, -1, -1
 	releaseall
 	end

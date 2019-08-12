@@ -53,18 +53,19 @@ AtroposKohlrabiSecretGarden_EventScript5::
 	
 AtroposKohlrabiSecretGarden_EventScript6::
 	lock
-	special ChooseStarter
-	waitstate
 	hideobjectat 2, MAP_ATROPOS_KOHLRABI_SECRET_GARDEN
 	hideobjectat 3, MAP_ATROPOS_KOHLRABI_SECRET_GARDEN
-	setobjectxy 1, 10, 13
-	turnobject 1, 1
+	special ChooseStarter
+	waitstate
+	applymovement 1, movement_AtroposKohlrabiSecretGarden6
+	waitmovement 0
 	msgbox Text_AtroposKohlrabiSecretGarden4, MSGBOX_DEFAULT
 	setvar VAR_RESCUE_VIVIAN, 2
 	setflag FLAG_RESCUE_VIVIAN
+	clearflag FLAG_HIDE_VIVIAN
 	setflag FLAG_SYS_POKEMON_GET
 	closemessage
-	warp MAP_ATROPOS_VIVIAN_HOUSE1F, 255, 9, 9
+	warp MAP_ATROPOS_VIVIAN_HOUSE1F, 255, 12, 7
 	release
 	end
 
@@ -102,6 +103,12 @@ movement_AtroposKohlrabiSecretGarden4:
 	
 movement_AtroposKohlrabiSecretGarden5:
 	walk_fast_left
+	step_end
+
+movement_AtroposKohlrabiSecretGarden6:
+	walk_right
+	walk_right
+	face_down
 	step_end
 	
 Text_AtroposKohlrabiSecretGarden1:
