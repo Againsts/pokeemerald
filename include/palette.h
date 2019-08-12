@@ -76,7 +76,7 @@ void TintPalette_GrayScale2(u16 *palette, u16 count);
 void TintPalette_SepiaTone(u16 *palette, u16 count);
 void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 bTone);
 
-//dns
+//DNS
 #define CHECK_MENU_OR_OVERWORLD 0x2021685;
 #define CHECK_COMBAT_OR_OVERWORLD 0x2021686;
 #define MENU_FLAG 1
@@ -89,7 +89,7 @@ void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 b
 #define DNS_EXCEPTION 0
 #define PAL_ACTIVE 1
 
-//Timelapses for DNS
+// Timelapses for DNS
 enum
 {
     TIME_MIDNIGHT,
