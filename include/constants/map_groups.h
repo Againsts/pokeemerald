@@ -25,20 +25,21 @@
 #define MAP_ATROPOS_ROUTE_THETA     (20 | (0 << 8))
 #define MAP_ATROPOS_ROUTE_IOTA      (21 | (0 << 8))
 #define MAP_ATROPOS_ROUTE_KAPPA     (22 | (0 << 8))
-#define MAP_LACHESIS_BATTLE_DOME    (23 | (0 << 8))
-#define MAP_ATROPOS_QUITE_PC        (24 | (0 << 8))
-#define MAP_ATROPOS_QUITE_PC2       (25 | (0 << 8))
-#define MAP_DARKNESS                (26 | (0 << 8))
 
 // Map Group 1
 #define MAP_ATROPOS_VIVIAN_HOUSE1F   (0 | (1 << 8))
 #define MAP_ATROPOS_VIVIAN_HOUSE2F   (1 | (1 << 8))
 #define MAP_ATROPOS_KOHLRABI_INDOOR1 (2 | (1 << 8))
+#define MAP_ATROPOS_QUITE_PC         (3 | (1 << 8))
+#define MAP_ATROPOS_QUITE_PC2        (4 | (1 << 8))
 
 // Map Group 2
 #define MAP_ATROPOS_KOHLRABI_BEACH         (0 | (2 << 8))
 #define MAP_ATROPOS_KOHLRABI_SECRET_GARDEN (1 | (2 << 8))
 #define MAP_ATROPOS_PRIDE_ROAD             (2 | (2 << 8))
+#define MAP_LACHESIS_BATTLE_DOME_HOUSE     (3 | (2 << 8))
+#define MAP_LACHESIS_BATTLE_DOME           (4 | (2 << 8))
+#define MAP_DARKNESS                       (5 | (2 << 8))
 
 // Map Group 3
 #define MAP_PETALBURG_CITY   (0 | (3 << 8))
@@ -468,10 +469,10 @@
 #define MAP_LINK_CONTEST_ROOM1              (28 | (28 << 8))
 #define MAP_UNKNOWN_LINK_CONTEST_ROOM_25_29 (29 | (28 << 8))
 #define MAP_UNKNOWN_LINK_CONTEST_ROOM_25_30 (30 | (28 << 8))
-#define MAP_UNKNOWN_LINK_CONTEST_ROOM_25_31 (31 | (28 << 8))
-#define MAP_UNKNOWN_LINK_CONTEST_ROOM_25_32 (32 | (28 << 8))
-#define MAP_UNKNOWN_LINK_CONTEST_ROOM_25_33 (33 | (28 << 8))
-#define MAP_UNKNOWN_LINK_CONTEST_ROOM_25_34 (34 | (28 << 8))
+#define MAP_UNKNOWN_MAP_25_31               (31 | (28 << 8))
+#define MAP_UNKNOWN_MAP_25_32               (32 | (28 << 8))
+#define MAP_UNKNOWN_MAP_25_33               (33 | (28 << 8))
+#define MAP_UNKNOWN_MAP_25_34               (34 | (28 << 8))
 #define MAP_LINK_CONTEST_ROOM2              (35 | (28 << 8))
 #define MAP_LINK_CONTEST_ROOM3              (36 | (28 << 8))
 #define MAP_LINK_CONTEST_ROOM4              (37 | (28 << 8))

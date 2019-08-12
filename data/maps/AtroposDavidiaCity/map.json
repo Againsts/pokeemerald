@@ -13,15 +13,6 @@
         }
     ],
     "coord_events": [
-        {
-            "elevation": 0,
-            "script": "AtroposDavidiaCity_EventScript1",
-            "type": "trigger",
-            "var": "VAR_UNUSED_0x404E",
-            "var_value": "0",
-            "x": 15,
-            "y": 17
-        }
     ],
     "id": "MAP_ATROPOS_DAVIDIA_CITY",
     "layout": "LAYOUT_ATROPOS_DAVIDIA_CITY",

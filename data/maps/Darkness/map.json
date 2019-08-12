@@ -11,7 +11,7 @@
     "id": "MAP_DARKNESS",
     "layout": "LAYOUT_DARKNESS",
     "map_type": "MAP_TYPE_UNUSED_1",
-    "music": "MUS_DAN02",
+    "music": "MUS_NONE",
     "name": "Darkness",
     "object_events": [
     ],

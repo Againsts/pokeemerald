@@ -588,12 +588,17 @@
     "gMapGroupAtroposIndoor": [
         "AtroposVivianHouse1F",
         "AtroposVivianHouse2F",
-        "AtroposKohlrabiIndoor1"
+        "AtroposKohlrabiIndoor1",
+        "AtroposQuitePC",
+        "AtroposQuitePC2"
     ],
     "gMapGroupAtroposMisc": [
         "AtroposKohlrabiBeach",
         "AtroposKohlrabiSecretGarden",
-        "AtroposPrideRoad"
+        "AtroposPrideRoad",
+        "LachesisBattleDomeHouse",
+        "LachesisBattleDome",
+        "Darkness"
     ],
     "gMapGroupAtroposOutdoor": [
         "AtroposKohlrabiGarden",
@@ -618,11 +623,7 @@
         "AtroposRouteEta",
         "AtroposRouteTheta",
         "AtroposRouteIota",
-        "AtroposRouteKappa",
-        "LachesisBattleDome",
-        "AtroposQuitePC",
-        "AtroposQuitePC2",
-        "Darkness"
+        "AtroposRouteKappa"
     ],
     "group_order": [
         "gMapGroupAtroposOutdoor",

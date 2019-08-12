@@ -4676,8 +4676,8 @@
             "height": 12,
             "id": "LAYOUT_ATROPOS_VIVIAN_HOUSE1F",
             "name": "AtroposVivianHouse1F_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 14
         },
         {
@@ -4687,7 +4687,7 @@
             "id": "LAYOUT_ATROPOS_VIVIAN_HOUSE2F",
             "name": "AtroposVivianHouse2F_Layout",
             "primary_tileset": "gTileset_AtroposIndoorGeneral",
-            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 16
         },
         {
@@ -4698,7 +4698,7 @@
             "name": "AtroposKohlrabiIndoor1_Layout",
             "primary_tileset": "gTileset_AtroposIndoorGeneral",
             "secondary_tileset": "gTileset_AtroposIndoor_pc",
-            "width": 11
+            "width": 14
         },
         {
             "blockdata_filepath": "data/layouts/LachesisBattleDome/map.bin",
@@ -4737,8 +4737,18 @@
             "id": "LAYOUT_DARKNESS",
             "name": "Darkness_Layout",
             "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_AtroposIndoor_0",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
             "width": 10
+        },
+        {
+            "blockdata_filepath": "data/layouts/LachesisBattleDomeHouse/map.bin",
+            "border_filepath": "data/layouts/LachesisBattleDomeHouse/border.bin",
+            "height": 8,
+            "id": "LAYOUT_LACHESIS_BATTLE_DOME_HOUSE",
+            "name": "LachesisBattleDomeHouse_Layout",
+            "primary_tileset": "gTileset_AtroposIndoorGeneral",
+            "secondary_tileset": "gTileset_AtroposIndoor_pc",
+            "width": 6
         }
     ],
     "layouts_table_label": "gMapLayouts"

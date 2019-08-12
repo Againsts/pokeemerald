@@ -238,6 +238,7 @@ const struct EventObjectGraphicsInfo *const gEventObjectGraphicsInfoPointers[] =
     &gEventObjectGraphicsInfo_RubySapphireMay,
     &gEventObjectGraphicsInfo_Lugia,
     &gEventObjectGraphicsInfo_HoOh,
+    &gEventObjectGraphicsInfo_White_walking,
 };
 
 const struct EventObjectGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -5,6 +5,7 @@
 #include "palette.h"
 #include "bg.h"
 #include "graphics.h"
+#include "event_data.h"
 
 // const rom data
 const u8 gTextWindowFrame1_Gfx[] = INCBIN_U8("graphics/text_window/1.4bpp");
@@ -187,7 +188,14 @@ const u16 *stdpal_get(u8 id)
 
 const u16 *GetOverworldTextboxPalettePtr(void)
 {
-    return gMessageBox_Pal;
+	if (FlagGet(FLAG_TEXTBOX_MIDDLE_BLACK))
+	{
+		return gMessageBox_Pal_black;
+	}
+	else
+	{
+		return gMessageBox_Pal;
+	}
 }
 
 void sub_8098C6C(u8 bg, u16 destOffset, u8 palOffset)

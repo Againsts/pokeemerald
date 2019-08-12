@@ -3,8 +3,239 @@
 #include "util.h"
 #include "decompress.h"
 #include "gpu_regs.h"
+#include "rtc.h"
 #include "task.h"
 #include "constants/rgb.h"
+#include "constants/map_types.h"
+
+//DNS
+//Configure palettes to be affected or not by DNS filtering
+const struct DnsPalExceptions gOWPalExceptions =
+{
+    .pal =
+    {
+        PAL_ACTIVE,     //1
+        PAL_ACTIVE,     //2
+        PAL_ACTIVE,     //3
+        PAL_ACTIVE,     //4
+        PAL_ACTIVE,     //5
+        PAL_ACTIVE,     //6
+        PAL_ACTIVE,     //7
+        PAL_ACTIVE,     //8
+        PAL_ACTIVE,     //9
+        PAL_ACTIVE,     //10
+        PAL_ACTIVE,     //11
+        PAL_ACTIVE,     //12
+        PAL_ACTIVE,     //13
+        DNS_EXCEPTION,  //14
+        DNS_EXCEPTION,  //15
+        DNS_EXCEPTION,  //16
+        PAL_ACTIVE,     //17
+        PAL_ACTIVE,     //18
+        PAL_ACTIVE,     //19
+        PAL_ACTIVE,     //20
+        PAL_ACTIVE,     //21
+        PAL_ACTIVE,     //22
+        PAL_ACTIVE,     //23
+        PAL_ACTIVE,     //24
+        PAL_ACTIVE,     //25
+        PAL_ACTIVE,     //26
+        PAL_ACTIVE,     //27
+        PAL_ACTIVE,     //28
+        PAL_ACTIVE,     //29
+        PAL_ACTIVE,     //30
+        PAL_ACTIVE,     //31
+        PAL_ACTIVE,     //32
+    },
+};
+
+//Configure palettes to be affected or not by DNS while in combat
+const struct DnsPalExceptions gCombatPalExceptions =
+{
+    .pal =
+    {
+        DNS_EXCEPTION,  //1
+        DNS_EXCEPTION,  //2
+        PAL_ACTIVE,     //3
+        PAL_ACTIVE,     //4
+        PAL_ACTIVE,     //5
+        DNS_EXCEPTION,  //6
+        DNS_EXCEPTION,     //7
+        DNS_EXCEPTION,     //8
+        DNS_EXCEPTION,     //9
+        DNS_EXCEPTION,     //10
+        DNS_EXCEPTION,     //11
+        DNS_EXCEPTION,     //12
+        DNS_EXCEPTION,     //13
+        DNS_EXCEPTION,     //14
+        DNS_EXCEPTION,     //15
+        DNS_EXCEPTION,     //16
+        DNS_EXCEPTION,     //17
+        DNS_EXCEPTION,     //18
+        DNS_EXCEPTION,     //19
+        DNS_EXCEPTION,     //20
+        DNS_EXCEPTION,  //21
+        DNS_EXCEPTION,  //22
+        DNS_EXCEPTION,  //23
+        DNS_EXCEPTION,     //24
+        DNS_EXCEPTION,     //25
+        DNS_EXCEPTION,     //26
+        DNS_EXCEPTION,     //27
+        DNS_EXCEPTION,     //28
+        DNS_EXCEPTION,     //29
+        DNS_EXCEPTION,     //30
+        DNS_EXCEPTION,     //31
+        DNS_EXCEPTION,     //32
+    },
+};
+
+//MapTypes not affected by DNS
+const u8 gDnsMapExceptions[] =
+{
+    MAP_TYPE_UNUSED_1,
+    MAP_TYPE_INDOOR,
+    MAP_TYPE_UNDERGROUND,
+    MAP_TYPE_SECRET_BASE,
+};
+
+/* ***********************************************************
+ * DNS filters are actual 15bit RGB colours.
+ * This colours R - G - B channels are substracted from
+ * the original colour in the palette buffer during the
+ * transfer from the buffer to the palette RAM.
+ *
+ *  [BUFFER] -> (Value - Filter) -> [PAL_RAM]
+ *
+ * This means that you shouln't use too high values for RGB
+ * channels in the filters.
+ * I Suggest you to not use channels with a value above 16.
+ *
+ * Feel free to experiment with your own filters.
+ * **********************************************************/
+
+//Filters used by DNS at Midnight
+const u16 gMidnightFilters[] =
+{
+    RGB2(14, 14, 6),    //CE19
+    RGB2(14, 14, 7),    //CE1D
+    RGB2(14, 14, 8),    //CE21
+    RGB2(15, 15, 8),    //EF21
+    RGB2(15, 15, 9),    //EF25
+    RGB2(15, 15, 9),    //EF25
+    RGB2(16, 16, 9),    //1026
+    RGB2(16, 16, 10),   //102A
+};
+
+//Filters used by DNS at Dawn
+const u16 gDawnFilters[] =
+{
+    RGB2(15, 15, 10),
+    RGB2(15, 15, 10),   //1
+    RGB2(14, 14, 10),   //2
+    RGB2(13, 13, 10),   //3
+    RGB2(12, 12, 10),   //4
+    RGB2(11, 11, 10),   //5
+    RGB2(10, 10, 10),   //6
+    RGB2(9, 9, 10),     //7
+    RGB2(8, 8, 10),     //8
+    RGB2(8, 8, 11),     //9
+    RGB2(7, 7, 11),     //10
+    RGB2(6, 6, 11),     //11
+    RGB2(5, 5, 11),     //12
+    RGB2(4, 4, 11),     //13
+    RGB2(3, 3, 11),     //14
+    RGB2(2, 2, 11),     //15
+    RGB2(1, 1, 11),     //16
+    RGB2(0, 0, 11),     //17
+    RGB2(0, 0, 10),     //18
+    RGB2(0, 0, 9),      //19
+    RGB2(0, 0, 8),      //20
+    RGB2(0, 0, 7),      //21
+    RGB2(0, 0, 6),      //22
+    RGB2(0, 0, 5),      //23
+    RGB2(0, 0, 4),      //24
+    RGB2(0, 0, 3),      //0003
+    RGB2(0, 0, 2),      //0002
+    RGB2(0, 0, 1),      //0001
+    RGB2(0, 0, 0),      //0000
+    RGB2(0, 0, 0),      //0000
+};
+
+//DNS Day filter (no filter actually lul)
+const u16 gDayFilter = RGB2(0, 0, 0);   //0000
+
+//DNS Sunset filters
+const u16 gSunsetFilters[] =
+{
+    RGB2(0, 0, 1),      //0004
+    RGB2(0, 1, 1),      //2004
+    RGB2(0, 1, 2),      //2008
+    RGB2(0, 1, 3),      //200C
+    RGB2(0, 2, 3),      //400C
+    RGB2(0, 2, 4),      //4010
+    RGB2(0, 2, 5),      //4014
+    RGB2(0, 3, 5),      //6014
+    RGB2(0, 3, 6),      //6018
+    RGB2(0, 3, 7),      //601C
+    RGB2(0, 4, 7),      //801C
+    RGB2(0, 4, 8),      //8020
+    RGB2(0, 4, 9),      //8024
+    RGB2(0, 5, 9),      //A024
+    RGB2(0, 5, 10),     //A028
+    RGB2(0, 5, 11),     //A02C
+    RGB2(0, 6, 11),     //C02C
+    RGB2(0, 6, 12),     //C030
+    RGB2(0, 6, 13),     //C034
+    RGB2(0, 7, 13),     //E034
+    RGB2(0, 7, 14),     //E038
+    RGB2(0, 7, 14),     //E038
+    RGB2(0, 8, 14),     //0039
+    RGB2(0, 9, 14),     //2039
+    RGB2(0, 10, 14),    //4039
+    RGB2(0, 11, 14),    //6039
+    RGB2(0, 12, 14),    //8039
+    RGB2(0, 13, 14),    //A039
+    RGB2(0, 14, 14),    //C039
+    RGB2(0, 14, 14),    //C039
+};
+
+//DNS NightFall Filters
+const u16 gNightfallFilters[] =
+{
+    RGB2(0, 14, 14),    //39C0
+    RGB2(0, 14, 14),    //39C0
+    RGB2(0, 14, 13),    //35C0
+    RGB2(0, 14, 12),    //31C0
+    RGB2(0, 14, 11),    //2DC0
+    RGB2(0, 14, 10),    //29C0
+    RGB2(1, 14, 10),    //29C1
+    RGB2(1, 14, 9),     //25C1
+    RGB2(0, 14, 8),     //21C0
+    RGB2(1, 14, 7),     //1DC1
+    RGB2(1, 14, 6),     //19C1
+    RGB2(2, 14, 6),     //19C2
+    RGB2(2, 14, 5),     //15C2
+    RGB2(2, 14, 4),     //11C2
+    RGB2(2, 14, 3),     //0DC2
+    RGB2(2, 14, 2),     //09C2
+    RGB2(2, 14, 2),     //09C2
+    RGB2(3, 14, 3),     //0DC3
+    RGB2(4, 14, 4),     //11C4
+    RGB2(5, 14, 5),     //15C5
+    RGB2(6, 14, 6),     //19C6
+    RGB2(7, 14, 6),     //19C7
+    RGB2(8, 14, 6),     //19C8
+    RGB2(9, 14, 6),     //19C9
+    RGB2(10, 14, 6),    //19CA
+    RGB2(11, 14, 6),    //19CB
+    RGB2(12, 14, 6),    //19CC
+    RGB2(13, 14, 6),    //19CD
+    RGB2(14, 14, 6),    //19CE
+    RGB2(14, 14, 6),    //19CE
+};
+
+//DNS Night filter
+const u16 gNightFilter = RGB2(14, 14, 6);   //19CE
 
 enum
 {
@@ -104,7 +335,8 @@ void TransferPlttBuffer(void)
     {
         void *src = gPlttBufferFaded;
         void *dest = (void *)PLTT;
-        DmaCopy16(3, src, dest, PLTT_SIZE);
+        DNS_System(src, dest);  //Does 16b Dma Transfer   //Nueva línea
+        //DmaCopy16(3, src, dest, PLTT_SIZE);
         sPlttBufferTransferPending = 0;
         if (gPaletteFade.mode == HARDWARE_FADE && gPaletteFade.active)
             UpdateBlendRegisters();
@@ -190,7 +422,8 @@ bool8 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targe
 
         temp = gPaletteFade.bufferTransferDisabled;
         gPaletteFade.bufferTransferDisabled = 0;
-        CpuCopy32(gPlttBufferFaded, (void *)PLTT, PLTT_SIZE);
+        //CpuCopy32(gPlttBufferFaded, (void *)PLTT, PLTT_SIZE);
+        TransferPlttBuffer();   // avoid dns flicker
         sPlttBufferTransferPending = 0;
         if (gPaletteFade.mode == HARDWARE_FADE && gPaletteFade.active)
             UpdateBlendRegisters();
@@ -586,7 +819,7 @@ static u8 UpdateFastPaletteFade(void)
 
     if (IsSoftwarePaletteFadeFinishing())
         return gPaletteFade.active ? PALETTE_FADE_STATUS_ACTIVE : PALETTE_FADE_STATUS_DONE;
-        
+
 
     if (gPaletteFade.objPaletteToggle)
     {
@@ -721,7 +954,7 @@ static u8 UpdateFastPaletteFade(void)
         gPaletteFade.mode = NORMAL_FADE;
         gPaletteFade.softwareFadeFinishing = 1;
     }
-    
+
     // gPaletteFade.active cannot change since the last time it was checked. So this
     // is equivalent to `return PALETTE_FADE_STATUS_ACTIVE;`
     return gPaletteFade.active ? PALETTE_FADE_STATUS_ACTIVE : PALETTE_FADE_STATUS_DONE;
@@ -1026,5 +1259,167 @@ void sub_80A2D54(u8 taskId)
             }
             data[0] = temp;
         }
+    }
+}
+
+/* ****************************************************
+ * **************** D&N for pokeemerald ***************
+ * ****************************************************
+ * Based on Prime Dialga DNS for Pokemon GBA Games.
+ * Additional credits to Andrea, Eing & BLAx501!
+ * Author: Xhyz/Samu
+ ******************************************************/
+void DNS_System(void *src, void *dest)
+{
+    u8* menu_status = (u8*) CHECK_MENU_OR_OVERWORLD;
+
+    //If Player is in a menu regular DMA transfer will be used
+    if (*menu_status & MENU_FLAG || IsMapDNSException())
+    {
+        DmaCopy16(3, src, dest, PLTT_SIZE);
+    }
+    else    //If Player is in OW or Combat DNS Transfer will be used instead
+    {
+        DnsDmaTransfer16(src, dest);
+    }
+}
+
+//Applies filter to colors while doing manual dma transfer from buffer to palettes ram
+void DnsDmaTransfer16(void *src, void *dest)
+{
+    u8 pal_num; u8 col_num; u8 i;
+    u16 color; u16 filter;
+    u8 palExceptionFlags[32];
+
+    u16* pal_color = (u16*) PLTT;   //pointer to palette ram
+    u8* combat_status = (u8*) CHECK_COMBAT_OR_OVERWORLD;
+
+    //Obtains DNS Filter
+    filter = GetDNSFilter();
+
+    //Inits palette exception flags
+    for (i = 0; i < 32; i++)
+        palExceptionFlags[i] = (*combat_status & COMBAT_FLAG) ? gCombatPalExceptions.pal[i] : gOWPalExceptions.pal[i];
+
+
+    //Loops through all palettes checking whether they are dns active or not
+    for (pal_num = 0; pal_num < 32; pal_num++)
+    {
+        if (palExceptionFlags[pal_num] == PAL_ACTIVE)   //Filters de palette
+        {
+            for (col_num = 0; col_num < 16; col_num++)
+            {
+                *pal_color = ApplyDNSFilterToColor(gPlttBufferFaded[pal_num * 16 + col_num], filter);
+                pal_color++;
+            }
+        }
+        else
+        {
+            for (col_num = 0; col_num < 16; col_num++)  //Transfers palette without filtering
+            {
+                *pal_color = gPlttBufferFaded[pal_num * 16 + col_num];
+                pal_color++;
+            }
+        }
+    }
+}
+
+//Applies filter to a colour. Filters RGB channels are substracted from colour RGB channels.
+u16 ApplyDNSFilterToColor(u16 color, u16 filter)
+{
+    u16 red; u16 green; u16 blue;
+    u16 red_filter; u16 green_filter; u16 blue_filter;
+
+    red = color & RED_CHANNEL_OPERATOR;
+    green = color & GREEN_CHANNEL_OPERATOR;
+    blue = color & BLUE_CHANNEL_OPERATOR;
+
+    red_filter = filter & RED_CHANNEL_OPERATOR;
+    green_filter = filter & GREEN_CHANNEL_OPERATOR;
+    blue_filter = filter & BLUE_CHANNEL_OPERATOR;
+
+    red = red - red_filter;
+    green = (green >> 5) - (green_filter >> 5);
+    blue = (blue >> 10) - (blue_filter >> 10);
+
+    return RGB2(red <= 31 ? red : 0, green <= 31 ? green : 0, blue <= 31 ? blue : 0);
+}
+
+//returns true if the current mapType is affected by DNS.
+bool8 IsMapDNSException()
+{
+    u8 i;
+    for (i=0; i < sizeof(gDnsMapExceptions)/sizeof(gDnsMapExceptions[0]); i++)
+        if (gMapHeader.mapType == gDnsMapExceptions[i])
+            return TRUE;
+    return FALSE;
+}
+
+//returns the filter to use depending on RTC time.
+u16 GetDNSFilter()
+{
+    u8 hour = Rtc_GetCurrentHour();
+    u8 minutes = Rtc_GetCurrentMinute();
+
+    switch(GetTimeLapse(hour))
+    {
+        case TIME_MIDNIGHT:
+            if (hour < 1)
+                return gMidnightFilters[minutes >> 3];
+            else
+                return gMidnightFilters[7];
+
+        case TIME_DAWN:
+            return gDawnFilters[minutes >> 1];
+
+        case TIME_DAY:
+            return gDayFilter;
+
+        case TIME_SUNSET:
+            return gSunsetFilters[minutes >> 1];
+
+        case TIME_NIGHTFALL:
+            return gNightfallFilters[minutes >> 1];
+
+        case TIME_NIGHT:
+            return gNightFilter;
+    }
+
+    return 0;
+}
+
+//Returns the timeLapse
+u8 GetTimeLapse(u8 hour)
+{
+    if (hour < MIDNIGHT_END_HOUR)
+        return TIME_MIDNIGHT;
+    else if (hour < DAWN_END_HOUR)
+        return TIME_DAWN;
+    else if (hour < DAY_END_HOUR)
+        return TIME_DAY;
+    else if (hour < SUNSET_END_HOUR)
+        return TIME_SUNSET;
+    else if (hour < NIGHTFALL_END_HOUR)
+        return TIME_NIGHTFALL;
+    else
+        return TIME_NIGHT;
+}
+
+//Does Dma palette transfer with a black & white effect
+void BlacknWhiteDmaTransfer()
+{
+    u16* pal_color = (u16*) PLTT;   //pointer to palette ram
+    u16 color, red, green, blue, i;
+
+    for (i = 0; i < 512; i++)
+    {
+        color = gPlttBufferFaded[i];
+
+        red = color & RED_CHANNEL_OPERATOR;
+        green = color & GREEN_CHANNEL_OPERATOR;
+        blue = color & BLUE_CHANNEL_OPERATOR;
+
+        *pal_color = RGB2(red, green, blue);
+        pal_color++;
     }
 }

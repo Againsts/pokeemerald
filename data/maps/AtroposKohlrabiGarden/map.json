@@ -4,6 +4,46 @@
     "allow_running": true,
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "bg_events": [
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposKohlrabiGarden_EventScript_5",
+            "type": "sign",
+            "x": 11,
+            "y": 15
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposKohlrabiGarden_EventScript_4",
+            "type": "sign",
+            "x": 3,
+            "y": 9
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposKohlrabiGarden_EventScript_6",
+            "type": "sign",
+            "x": 10,
+            "y": 2
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposKohlrabiGarden_EventScript_6",
+            "type": "sign",
+            "x": 11,
+            "y": 2
+        },
+        {
+            "elevation": 0,
+            "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            "script": "AtroposKohlrabiGarden_EventScript_3",
+            "type": "sign",
+            "x": 7,
+            "y": 13
+        }
     ],
     "connections": [
         {
@@ -23,6 +63,42 @@
         }
     ],
     "coord_events": [
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 1,
+            "y": 10
+        },
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 1,
+            "y": 11
+        },
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 19,
+            "y": 8
+        },
+        {
+            "elevation": 0,
+            "script": "AtroposKohlrabiGarden_EventScript1",
+            "type": "trigger",
+            "var": "VAR_RESCUE_VIVIAN",
+            "var_value": "1",
+            "x": 19,
+            "y": 9
+        }
     ],
     "id": "MAP_ATROPOS_KOHLRABI_GARDEN",
     "layout": "LAYOUT_ATROPOS_KOHLRABI_GARDEN",
@@ -30,6 +106,45 @@
     "music": "MUS_DAN02",
     "name": "AtroposKohlrabiGarden",
     "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_FAT_MAN",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+            "script": "AtroposKohlrabiGarden_EventScript_7",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 8,
+            "y": 11
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BOY_1",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+            "script": "AtroposKohlrabiGarden_EventScript_8",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 4,
+            "y": 4
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_HIDE_VIVIAN_OUTSIDE",
+            "graphics_id": "EVENT_OBJ_GFX_GIRL_2",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_FACE_UP",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 6,
+            "y": 11
+        }
     ],
     "region_map_section": "MAPSEC_ATROPOS_KOHLRABI_GARDEN",
     "requires_flash": false,
@@ -37,7 +152,14 @@
     "warp_events": [
         {
             "dest_map": "MAP_ATROPOS_VIVIAN_HOUSE1F",
-            "dest_warp_id": 2,
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 6,
+            "y": 9
+        },
+        {
+            "dest_map": "MAP_ATROPOS_KOHLRABI_INDOOR1",
+            "dest_warp_id": 0,
             "elevation": 0,
             "x": 14,
             "y": 15

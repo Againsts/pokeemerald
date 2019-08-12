@@ -92,14 +92,14 @@
 #define VAR_POKELOT_RND1                     0x404B
 #define VAR_POKELOT_RND2                     0x404C
 #define VAR_POKELOT_PRIZE_PLACE              0x404D
-#define VAR_UNUSED_0x404E                    0x404E // Unused Var
+#define VAR_OPENING_STATE                    0x404E // SB Var
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_0x4050                           0x4050
 #define VAR_ROUTE102_ACCESSIBLE              0x4051
-#define VAR_UNUSED_0x4052                    0x4052 // Unused Var
+#define VAR_RESCUE_VIVIAN                    0x4052 // SB Var
 #define VAR_LAVARIDGE_RIVAL_STATE            0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054
-#define VAR_UNUSED_0x4055                    0x4055 // Unused Var
+#define VAR_STARTER_GENERATION                    0x4055 // SB Var
 #define VAR_UNUSED_0x4056                    0x4056 // Unused Var
 #define VAR_PETALBURG_STATE                  0x4057
 #define VAR_SLATEPORT_STATE                  0x4058
