@@ -23,6 +23,7 @@ AtroposKohlrabiGarden_EventScript9::
  msgbox Text_AtroposKohlrabiGarden_9, MSGBOX_AUTOCLOSE
  applymovement 3, movement_AtroposKohlrabiGarden3
  waitmovement 0
+ setflag FLAG_HIDE_VIVIAN_OUTSIDE
  setvar VAR_RESCUE_VIVIAN, 4
  release
  end
@@ -30,7 +31,6 @@ AtroposKohlrabiGarden_EventScript9::
 AtroposKohlrabiGarden_EventScript2::
  applymovement EVENT_OBJ_ID_PLAYER, movement_AtroposKohlrabiGarden1
  waitmovement 0
- setflag FLAG_HIDE_VIVIAN_OUTSIDE
  setvar VAR_RESCUE_VIVIAN, 4
  release
  end

@@ -16,9 +16,9 @@ Darkness_MapScript1:
 Darkness_EventScript1::
 	lockall
 	delay 100
-	msgbox Text_OP1, MSGBOX_DEFAULT
+	msgbox Text_OP1, MSGBOX_AUTOCLOSE
 	playbgm MUS_B_DOME, 0
-	msgbox Text_TimeAndPlace1, MSGBOX_DEFAULT
+	msgbox Text_TimeAndPlace1, MSGBOX_AUTOCLOSE
 	clearflag FLAG_TEXTBOX_MIDDLE_BLACK
 	delay 100
 	warpsilent MAP_LACHESIS_BATTLE_DOME, 255, 8, 6
@@ -29,7 +29,7 @@ Darkness_EventScript1::
 Darkness_EventScript2::
 	lockall
 	delay 100
-	msgbox Text_TimeAndPlace2, MSGBOX_DEFAULT
+	msgbox Text_TimeAndPlace2, MSGBOX_AUTOCLOSE
 	clearflag FLAG_TEXTBOX_MIDDLE_BLACK
 	delay 100
 	warpsilent MAP_LACHESIS_BATTLE_DOME_HOUSE, 255, 4, 3
@@ -40,8 +40,8 @@ Darkness_EventScript2::
 Darkness_EventScript3::
 	lockall
 	delay 100
-	msgbox Text_OP2, MSGBOX_DEFAULT
-	msgbox Text_TimeAndPlace3, MSGBOX_DEFAULT
+	msgbox Text_OP2, MSGBOX_AUTOCLOSE
+	msgbox Text_TimeAndPlace3, MSGBOX_AUTOCLOSE
 	clearflag FLAG_TEXTBOX_MIDDLE_BLACK
 	delay 100
 	warpsilent MAP_ATROPOS_KOHLRABI_BEACH, 255, 11, 3
@@ -63,8 +63,8 @@ Darkness_EventScript4::
 Darkness_EventScript5::
 	lockall
 	delay 100
-	msgbox Text_OP3, MSGBOX_DEFAULT
-	msgbox Text_TimeAndPlace4, MSGBOX_DEFAULT
+	msgbox Text_OP3, MSGBOX_AUTOCLOSE
+	msgbox Text_TimeAndPlace4, MSGBOX_AUTOCLOSE
 	clearflag FLAG_TEXTBOX_MIDDLE_BLACK
 	delay 100
 	warpsilent MAP_ATROPOS_VIVIAN_HOUSE2F, 255, 6, 9
@@ -83,7 +83,7 @@ Darkness_EventScript6::
 Darkness_EventScript7::
 	lockall
 	delay 30
-	msgbox Text_TimeAndPlace5, MSGBOX_DEFAULT
+	msgbox Text_TimeAndPlace5, MSGBOX_AUTOCLOSE
 	clearflag FLAG_TEXTBOX_MIDDLE_BLACK
 	warpsilent MAP_ATROPOS_VIVIAN_HOUSE2F, 255, 6, 9
 	releaseall

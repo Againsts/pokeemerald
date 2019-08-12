@@ -136,6 +136,7 @@ static void HandleAction_WallyBallThrow(void);
 static void HandleAction_TryFinish(void);
 static void HandleAction_NothingIsFainted(void);
 static void HandleAction_ActionFinished(void);
+static u8 GetCurveFactor(void);
 
 // EWRAM vars
 EWRAM_DATA u16 gBattle_BG0_X = 0;
@@ -1856,7 +1857,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
@@ -1868,7 +1869,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, 2, 0);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
@@ -1886,7 +1887,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, 2, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
@@ -1900,7 +1901,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, 2, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
@@ -5710,4 +5711,147 @@ static void HandleAction_ActionFinished(void)
     gBattleCommunication[4] = 0;
     gBattleScripting.multihitMoveEffect = 0;
     gBattleResources->battleScriptsStack->size = 0;
+}
+
+static const u32 gLevelCurveTimeTable[];
+static const u32 gLevelCurveTimeTable[] =
+{
+    0,
+    360,
+    720,
+    1080,
+    1440,
+    1800,
+    2160,
+    2520,
+    2880,
+    3240,
+    3600,
+    4620,
+    5040,
+    5460,
+    5880,
+    6300,
+    6720,
+    7140,
+    7560,
+    7980,
+    8400,
+    10080,
+    10560,
+    11040,
+    11520,
+    12000,
+    12480,
+    12960,
+    13440,
+    13920,
+    14400,
+    16740,
+    17280,
+    17820,
+    18360,
+    18900,
+    19440,
+    19980,
+    20520,
+    21060,
+    21600,
+    24600,
+    25200,
+    25800,
+    26400,
+    27000,
+    30360,
+    31020,
+    31680,
+    32340,
+    33000,
+    33660,
+    34320,
+    34980,
+    35640,
+    36300,
+    36960,
+    37620,
+    38280,
+    38940,
+    39600,
+    43920,
+    44640,
+    45360,
+    46080,
+    46800,
+    47520,
+    48240,
+    48960,
+    49680,
+    50400,
+    51120,
+    51840,
+    52560,
+    53280,
+    54000,
+    54720,
+    55440,
+    56160,
+    56880,
+    57600,
+    58320,
+    59040,
+    59760,
+    60480,
+    61200,
+    61920,
+    62640,
+    63360,
+    64080,
+    64800,
+    65520,
+    66240,
+    66960
+};
+
+static u8 GetCurveFactor(void)
+{
+    u8 i = 0;
+		u32 PlaySeconds;
+		u8 CountBadge = 0;
+		u8 value;
+		u8 Hardness;
+
+		if (FlagGet(FLAG_BADGE01_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE02_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE03_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE04_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE05_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE06_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE07_GET))
+			CountBadge++;
+
+      Hardness = 1;
+  	//	Hardness = VarGet(VAR_HARDNESS);
+		PlaySeconds = (gSaveBlock2Ptr->playTimeHours * 60 + gSaveBlock2Ptr->playTimeMinutes) * 60 + gSaveBlock2Ptr->playTimeSeconds;
+    do {
+      i++;
+    } while(gLevelCurveTimeTable[i] * Hardness + 400 < PlaySeconds);
+
+    if (i <= 13)
+        value = i + Random() % 1;
+    else if (i <= 26)
+        value = i + Random() % 2;
+    else if (i <= 45)
+        value = i + Random() % 3;
+    else if (i <= 59)
+        value = i + Random() % 4;
+    else
+        value = i + Random() % 5;
+
+		return value;
 }

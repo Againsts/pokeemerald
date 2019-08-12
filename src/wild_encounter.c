@@ -36,6 +36,7 @@ static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
 static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildMon, u8 type, u8 ability, u8 *monIndex);
 static bool8 IsAbilityAllowingEncounter(u8 level);
+static u8 GetWildCurveFactor(void);
 
 // EWRAM vars
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
@@ -351,7 +352,7 @@ void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
     u16 monData;
-	
+
     ZeroEnemyPartyMons();
     checkCuteCharm = TRUE;
 
@@ -386,7 +387,7 @@ void CreateWildMon(u16 species, u8 level)
     CreateMonWithNature(&gEnemyParty[0], species, level, 32, PickWildMonNature());
 }
 
-	
+
 enum
 {
     WILD_AREA_LAND,
@@ -430,7 +431,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_RANDOM_ROOM3 && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, GetWildCurveFactor());
     return TRUE;
 }
 
@@ -945,4 +946,96 @@ static void ApplyCleanseTagEncounterRateMod(u32 *encRate)
 {
     if (GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM) == ITEM_CLEANSE_TAG)
         *encRate = *encRate * 2 / 3;
+}
+
+static const u32 gLevelCurveTimeTable[];
+static const u32 gLevelCurveTimeTable[] =
+{
+    0,
+    720,
+    1080,
+    1440,
+    1800,
+    2160,
+    2520,
+    2880,
+    3240,
+    3600,
+    4620,
+    5040,
+    5460,
+    5880,
+    6300,
+    6720,
+    7140,
+    7560,
+    7980,
+    8400,
+    10080,
+    10560,
+    11040,
+    11520,
+    12000,
+    12480,
+    12960,
+    13440,
+    13920,
+    14400,
+    16740,
+    17280,
+    17820,
+    18360,
+    18900,
+    19440,
+    19980,
+    20520,
+    21060,
+    21600,
+    24600,
+    25200,
+    25800,
+    26400,
+    27000,
+    30360,
+    31020,
+    31680,
+    32340,
+    33000,
+    33660,
+    34320
+};
+
+static u8 GetWildCurveFactor(void)
+{
+    u8 i = 0;
+		u32 PlaySeconds;
+		u8 CountBadge = 0;
+		u8 value;
+		u8 Hardness;
+
+		if (FlagGet(FLAG_BADGE01_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE02_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE03_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE04_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE05_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE06_GET))
+			CountBadge++;
+		if (FlagGet(FLAG_BADGE07_GET))
+			CountBadge++;
+
+      Hardness = 1;
+  	//	Hardness = VarGet(VAR_HARDNESS);
+		PlaySeconds = (gSaveBlock2Ptr->playTimeHours * 60 + gSaveBlock2Ptr->playTimeMinutes) * 60 + gSaveBlock2Ptr->playTimeSeconds;
+    do {
+      i++;
+    } while(gLevelCurveTimeTable[i] * Hardness < PlaySeconds);
+
+        value = i + Random() % 1 + CountBadge*3/2;
+
+		return value;
 }

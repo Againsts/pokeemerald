@@ -39,5 +39,5 @@
     "show_map_name": false,
     "warp_events": [
     ],
-    "weather": "WEATHER_CLOUDS"
+    "weather": "WEATHER_NONE"
 }

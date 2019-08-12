@@ -41,8 +41,8 @@ LachesisBattleDome_EventScript1::
 	special SavePlayerParty
 	special CreateWhiteSkuldParty
 	
-	//setrespawn HEAL_LOCATION_MAVROSFLOGA_COLOSSEUM
-	//trainerbattle_no_intro TRAINER_LANCE_1, Text_LachesisBattleDome_5
+	setrespawn HEAL_LOCATION_LACHESIS_BATTLE_DOME
+	trainerbattle_no_intro TRAINER_LANCE_1, Text_LachesisBattleDome_5
 	msgbox Text_LachesisBattleDome_6, MSGBOX_AUTOCLOSE
 	playse SE_DENDOU
 	delay 80
@@ -167,6 +167,6 @@ movement_evil_camera:
 		
 	Text_LachesisBattleDome_7:
 		.string "??????: 你的末日即将来临,斯古尔特。\n"
-		.string "好自为之...\l"
+		.string "祈祷好运还会眷顾你吧...\l"
 		.string "...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30} ...{PAUSE 0x30}$"
 

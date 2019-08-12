@@ -4202,97 +4202,95 @@ u8 sub_813BF7C(void)
 void CreateWhiteSkuldParty(void)
 {
     u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_TOGEKISS, 53, 0x20, FALSE, 0, FALSE, 0);
-    CreateMon(&gPlayerParty[1], SPECIES_SABLEYE, 54, 0x20, FALSE, 0, FALSE, 0);
-    CreateMon(&gPlayerParty[2], SPECIES_SNORLAX, 57, 0x20, FALSE, 0, FALSE, 0);
-    CreateMon(&gPlayerParty[3], SPECIES_ALAKAZAM, 55, 0x20, FALSE, 0, FALSE, 0);
-    CreateMon(&gPlayerParty[4], SPECIES_KROOKODILE, 61, 0x20, FALSE, 0, FALSE, 0);
-//TOGEKISS
-    monData = 2;
+    CreateMon(&gPlayerParty[0], SPECIES_BEWEAR, 45, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[1], SPECIES_SABLEYE, 48, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[2], SPECIES_ALTARIA, 53, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[3], SPECIES_AMOONGUSS, 52, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[4], SPECIES_KROOKODILE, 55, 0x20, FALSE, 0, FALSE, 0);
+//SPECIES_BEWEAR
+    monData = 0;
     SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
-	monData = ITEM_SITRUS_BERRY;
-	SetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM , &monData);
     monData = MOVE_PROTECT;
     SetMonData(&gPlayerParty[0], MON_DATA_MOVE1, &monData);
     SetMonData(&gPlayerParty[0], MON_DATA_PP1, &gBattleMoves[monData].pp);
-    monData = MOVE_DOUBLE_TEAM;
+    monData = MOVE_HAMMER_ARM;
     SetMonData(&gPlayerParty[0], MON_DATA_MOVE2, &monData);
     SetMonData(&gPlayerParty[0], MON_DATA_PP2, &gBattleMoves[monData].pp);
-    monData = MOVE_SKY_ATTACK;
+    monData = MOVE_THUNDER_PUNCH;
     SetMonData(&gPlayerParty[0], MON_DATA_MOVE3, &monData);
     SetMonData(&gPlayerParty[0], MON_DATA_PP3, &gBattleMoves[monData].pp);
-    monData = MOVE_SAFEGUARD;
+    monData = MOVE_STOMPING_TANTRUM;
     SetMonData(&gPlayerParty[0], MON_DATA_MOVE4, &monData);
     SetMonData(&gPlayerParty[0], MON_DATA_PP4, &gBattleMoves[monData].pp);
 	//SABLEYE
-    monData = TRUE;
+    monData = 1;
     SetMonData(&gPlayerParty[1], MON_DATA_ABILITY_NUM, &monData);
-	monData = ITEM_SABLENITE;
-	SetMonData(&gPlayerParty[1], MON_DATA_HELD_ITEM , &monData);
+	  monData = ITEM_SABLENITE;
+	  SetMonData(&gPlayerParty[1], MON_DATA_HELD_ITEM , &monData);
     monData = MOVE_MEAN_LOOK;
     SetMonData(&gPlayerParty[1], MON_DATA_MOVE1, &monData);
     SetMonData(&gPlayerParty[1], MON_DATA_PP1, &gBattleMoves[monData].pp);
-    monData = MOVE_QUASH;
+    monData = MOVE_DETECT;
     SetMonData(&gPlayerParty[1], MON_DATA_MOVE2, &monData);
     SetMonData(&gPlayerParty[1], MON_DATA_PP2, &gBattleMoves[monData].pp);
-    monData = MOVE_SHADOW_CLAW;
+    monData = MOVE_AERIAL_ACE;
     SetMonData(&gPlayerParty[1], MON_DATA_MOVE3, &monData);
     SetMonData(&gPlayerParty[1], MON_DATA_PP3, &gBattleMoves[monData].pp);
-    monData = MOVE_NASTY_PLOT;
+    monData = MOVE_SWAGGER;
     SetMonData(&gPlayerParty[1], MON_DATA_MOVE4, &monData);
     SetMonData(&gPlayerParty[1], MON_DATA_PP4, &gBattleMoves[monData].pp);
 
-//SNORLAX
-    monData = FALSE;
+//ALTARIA
+    monData = 1;
     SetMonData(&gPlayerParty[2], MON_DATA_ABILITY_NUM, &monData);
-	monData = ITEM_LEFTOVERS;
+	monData = ITEM_ALTARIANITE;
 	SetMonData(&gPlayerParty[2], MON_DATA_HELD_ITEM , &monData);
-    monData = MOVE_AMNESIA;
+    monData = MOVE_DRAGON_DANCE;
     SetMonData(&gPlayerParty[2], MON_DATA_MOVE1, &monData);
     SetMonData(&gPlayerParty[2], MON_DATA_PP1, &gBattleMoves[monData].pp);
-    monData = MOVE_REST;
+    monData = MOVE_DRAGON_CLAW;
     SetMonData(&gPlayerParty[2], MON_DATA_MOVE2, &monData);
     SetMonData(&gPlayerParty[2], MON_DATA_PP2, &gBattleMoves[monData].pp);
-    monData = MOVE_TOXIC;
+    monData = MOVE_FLY;
     SetMonData(&gPlayerParty[2], MON_DATA_MOVE3, &monData);
     SetMonData(&gPlayerParty[2], MON_DATA_PP3, &gBattleMoves[monData].pp);
-    monData = MOVE_SLEEP_TALK;
+    monData = MOVE_ROOST;
     SetMonData(&gPlayerParty[2], MON_DATA_MOVE4, &monData);
     SetMonData(&gPlayerParty[2], MON_DATA_PP4, &gBattleMoves[monData].pp);
 
-//ALAKAZAM
-    monData = FALSE;
+//AMOONGUSS
+    monData = 0;
     SetMonData(&gPlayerParty[3], MON_DATA_ABILITY_NUM, &monData);
-	monData = ITEM_TWISTED_SPOON;
-	SetMonData(&gPlayerParty[3], MON_DATA_HELD_ITEM , &monData);
-    monData = MOVE_LASER_FOCUS;
+	  monData = ITEM_CELL_BATTERY;
+	  SetMonData(&gPlayerParty[3], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_ASTONISH;
     SetMonData(&gPlayerParty[3], MON_DATA_MOVE1, &monData);
     SetMonData(&gPlayerParty[3], MON_DATA_PP1, &gBattleMoves[monData].pp);
-    monData = MOVE_WONDER_ROOM;
+    monData = MOVE_SOLAR_BEAM;
     SetMonData(&gPlayerParty[3], MON_DATA_MOVE2, &monData);
     SetMonData(&gPlayerParty[3], MON_DATA_PP2, &gBattleMoves[monData].pp);
-    monData = MOVE_PROTECT;
+    monData = MOVE_CLEAR_SMOG;
     SetMonData(&gPlayerParty[3], MON_DATA_MOVE3, &monData);
     SetMonData(&gPlayerParty[3], MON_DATA_PP3, &gBattleMoves[monData].pp);
-    monData = MOVE_DOUBLE_TEAM;
+    monData = MOVE_ATTRACT;
     SetMonData(&gPlayerParty[3], MON_DATA_MOVE4, &monData);
     SetMonData(&gPlayerParty[3], MON_DATA_PP4, &gBattleMoves[monData].pp);
 
 	//KROOKODILE
     monData = TRUE;
     SetMonData(&gPlayerParty[4], MON_DATA_ABILITY_NUM, &monData);
-	monData = ITEM_METRONOME;
-	SetMonData(&gPlayerParty[4], MON_DATA_HELD_ITEM , &monData);
-    monData = MOVE_FOUL_PLAY;
+	  monData = ITEM_FLAME_ORB;
+	  SetMonData(&gPlayerParty[4], MON_DATA_HELD_ITEM , &monData);
+    monData = MOVE_SAND_ATTACK;
     SetMonData(&gPlayerParty[4], MON_DATA_MOVE1, &monData);
     SetMonData(&gPlayerParty[4], MON_DATA_PP1, &gBattleMoves[monData].pp);
-    monData = MOVE_SUBSTITUTE;
+    monData = MOVE_FACADE;
     SetMonData(&gPlayerParty[4], MON_DATA_MOVE2, &monData);
     SetMonData(&gPlayerParty[4], MON_DATA_PP2, &gBattleMoves[monData].pp);
-    monData = MOVE_BULK_UP;
+    monData = MOVE_BITE;
     SetMonData(&gPlayerParty[4], MON_DATA_MOVE3, &monData);
     SetMonData(&gPlayerParty[4], MON_DATA_PP3, &gBattleMoves[monData].pp);
-    monData = MOVE_OUTRAGE;
+    monData = MOVE_REST;
     SetMonData(&gPlayerParty[4], MON_DATA_MOVE4, &monData);
     SetMonData(&gPlayerParty[4], MON_DATA_PP4, &gBattleMoves[monData].pp);
 }

@@ -25,6 +25,45 @@
     "music": "MUS_DAN02",
     "name": "AtroposRouteAlpha",
     "object_events": [
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BUG_CATCHER",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 25,
+            "y": 12
+        },
+        {
+            "elevation": 3,
+            "flag": "0",
+            "graphics_id": "EVENT_OBJ_GFX_BOY_3",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "NULL",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 16,
+            "y": 6
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_ROUTE_103_GUARD_SPEC",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "Route103_EventScript_ItemGuardSpec",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 7,
+            "y": 19
+        }
     ],
     "region_map_section": "MAPSEC_ATROPOS_ROUTE_ALPHA",
     "requires_flash": false,

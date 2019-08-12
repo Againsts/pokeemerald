@@ -1667,8 +1667,8 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_ALTARIA] =
     {
-        .size = 0x87,
-        .y_offset = 0x8,
+        .size = 0x85,
+        .y_offset = 0xA,
     },
     [SPECIES_WYNAUT] =
     {

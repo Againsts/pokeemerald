@@ -144,6 +144,19 @@
             "trainer_type": "0",
             "x": 6,
             "y": 11
+        },
+        {
+            "elevation": 3,
+            "flag": "FLAG_ITEM_ROUTE_102_POTION",
+            "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
+            "movement_range_x": 0,
+            "movement_range_y": 0,
+            "movement_type": "MOVEMENT_TYPE_NONE",
+            "script": "Route102_EventScript_ItemPotion",
+            "trainer_sight_or_berry_tree_id": "0",
+            "trainer_type": "0",
+            "x": 6,
+            "y": 19
         }
     ],
     "region_map_section": "MAPSEC_ATROPOS_KOHLRABI_GARDEN",
