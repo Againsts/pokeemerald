@@ -2403,13 +2403,13 @@ void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFix
     CalculateMonStats(mon);
 }
 
-static u32 CheckShinyMon(u32 pid) 
+static u32 CheckShinyMon(u32 pid)
 {
 	u16 chance = 1;	//Default 1/4096 rate
 
 	if (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0)
 		chance = 3;
-		
+
 	if (FlagGet(SHINY_CREATION_FLAG))
 		chance = 4097;
 
@@ -2423,7 +2423,7 @@ static u32 CheckShinyMon(u32 pid)
 		u16 tid = LOHALF(playerId);
 		pid = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(pid)) << 16) | LOHALF(pid);
 	}
-	
+
 	return pid;
 };
 
@@ -2440,7 +2440,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         personality = fixedPersonality;
     else
         personality = Random32();
-	
+
 	personality = CheckShinyMon(personality);
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
 
@@ -2519,11 +2519,16 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
 		//Force initially no hidden ability
 		if (FlagGet(HIDDEN_ABILITY_FLAG))
+    {
 			value = 1;
+      FlagSet(HIDDEN_ABILITY_FLAG);
+    }
 		else
+    {
 			value = 0;
+    }
 
-        SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
+    SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
 
     GiveBoxMonInitialMoveset(boxMon);
 }
@@ -4440,12 +4445,12 @@ u8 GetAbilityBySpecies(u16 species, u8 abilityNum, u32 personality)
 {
 	u8 p16;
 	p16 = (personality / 65536) % 2;
-	
+
     if ((abilityNum == TRUE) && gBaseStats[species].abilityHidden != ABILITY_NONE)
 		gLastUsedAbility = gBaseStats[species].abilityHidden;
 	else if ((p16 == 1) &&gBaseStats[species].abilities[1] != ABILITY_NONE)
 		gLastUsedAbility = gBaseStats[species].abilities[1];
-	else 
+	else
 		gLastUsedAbility = gBaseStats[species].abilities[0];
 	return gLastUsedAbility;
 }
@@ -4455,7 +4460,7 @@ u8 GetMonAbility(struct Pokemon *mon)
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
 	u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-	
+
     return GetAbilityBySpecies(species, abilityNum, personality);
 }
 

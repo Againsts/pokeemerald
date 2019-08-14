@@ -112,13 +112,13 @@
 #define VAR_UNUSED_0x405F                    0x405F // Unused Var
 #define VAR_ROUTE101_STATE                   0x4060
 #define VAR_UNUSED_0x4061                    0x4061 // Unused Var
-#define VAR_SEED1                            0x4062 // Unused Var
+#define VAR_UNUSED_0x4062                    0x4062 // Unused Var
 #define VAR_0x4063                           0x4063
-#define VAR_SEED2                            0x4064 // Unused Var
-#define VAR_SEED3                            0x4065 // Unused Var
-#define VAR_SEED4                            0x4066 // Unused Var
-#define VAR_SEED5                            0x4067 // Unused Var
-#define VAR_SEED6                            0x4068 // Unused Var
+#define VAR_UNUSED_0x4064                    0x4064 // Unused Var
+#define VAR_UNUSED_0x4065                    0x4065 // Unused Var
+#define VAR_UNUSED_0x4066                    0x4066 // Unused Var
+#define VAR_UNUSED_0x4067                    0x4067 // Unused Var
+#define VAR_UNUSED_0x4068                    0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                   0x4069
 #define VAR_UNUSED_0x406A                    0x406A // Unused Var
 #define VAR_UNUSED_0x406B                    0x406B // Unused Var

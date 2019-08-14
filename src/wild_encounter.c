@@ -685,20 +685,25 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
                     return TRUE;
                 }
 
+                //assign hidden ability
+                if (MetatileBehavior_IsTallGrass(currMetaTileBehavior) == TRUE &&  Random() % 100 < 15 )
+                    FlagSet(HIDDEN_ABILITY_FLAG);
                 // try a regular wild land encounter
+
                 if (TryGenerateWildMonSWSB(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE, headerId) == TRUE)
                 {
-					          u8 rand = Random() % 100;
-                    if (rand< 20 && USE_BATTLE_DEBUG && !GetSafariZoneFlag() && GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS)
+                    if (MetatileBehavior_IsTallGrass(currMetaTileBehavior) == TRUE &&  Random() % 100 < 40 && !GetSafariZoneFlag() && GetMonsStateToDoubles() == PLAYER_HAS_TWO_USABLE_MONS)
                     {
           						struct Pokemon mon1 = gEnemyParty[0];
+                      if (MetatileBehavior_IsTallGrass(currMetaTileBehavior) == TRUE &&  Random() % 100 < 50 )
+                          FlagSet(HIDDEN_ABILITY_FLAG);
           						TryGenerateWildMonSWSB(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE, headerId);
           						gEnemyParty[1] = mon1;
           						BattleSetup_StartDoubleWildBattle();
                     }
                     else
                     {
-                        BattleSetup_StartWildBattle();
+                      BattleSetup_StartWildBattle();
                     }
                     return TRUE;
                 }
