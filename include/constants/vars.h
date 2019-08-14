@@ -96,10 +96,10 @@
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_0x4050                           0x4050
 #define VAR_ROUTE102_ACCESSIBLE              0x4051
-#define VAR_RESCUE_VIVIAN                    0x4052 // SB Var
+#define VAR_RESCUE_VIVIAN_STATE              0x4052 // SB Var
 #define VAR_LAVARIDGE_RIVAL_STATE            0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054
-#define VAR_STARTER_GENERATION                    0x4055 // SB Var
+#define VAR_STARTER_GENERATION               0x4055 // SB Var
 #define VAR_UNUSED_0x4056                    0x4056 // Unused Var
 #define VAR_PETALBURG_STATE                  0x4057
 #define VAR_SLATEPORT_STATE                  0x4058
@@ -112,13 +112,13 @@
 #define VAR_UNUSED_0x405F                    0x405F // Unused Var
 #define VAR_ROUTE101_STATE                   0x4060
 #define VAR_UNUSED_0x4061                    0x4061 // Unused Var
-#define VAR_UNUSED_0x4062                    0x4062 // Unused Var
+#define VAR_SEED1                            0x4062 // Unused Var
 #define VAR_0x4063                           0x4063
-#define VAR_UNUSED_0x4064                    0x4064 // Unused Var
-#define VAR_UNUSED_0x4065                    0x4065 // Unused Var
-#define VAR_UNUSED_0x4066                    0x4066 // Unused Var
-#define VAR_UNUSED_0x4067                    0x4067 // Unused Var
-#define VAR_UNUSED_0x4068                    0x4068 // Unused Var
+#define VAR_SEED2                            0x4064 // Unused Var
+#define VAR_SEED3                            0x4065 // Unused Var
+#define VAR_SEED4                            0x4066 // Unused Var
+#define VAR_SEED5                            0x4067 // Unused Var
+#define VAR_SEED6                            0x4068 // Unused Var
 #define VAR_ROUTE110_STATE                   0x4069
 #define VAR_UNUSED_0x406A                    0x406A // Unused Var
 #define VAR_UNUSED_0x406B                    0x406B // Unused Var

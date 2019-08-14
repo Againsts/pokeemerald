@@ -136,7 +136,7 @@ static void HandleAction_WallyBallThrow(void);
 static void HandleAction_TryFinish(void);
 static void HandleAction_NothingIsFainted(void);
 static void HandleAction_ActionFinished(void);
-static u8 GetCurveFactor(void);
+static u8 GetCurveFactor(u8 level);
 
 // EWRAM vars
 EWRAM_DATA u16 gBattle_BG0_X = 0;
@@ -1857,7 +1857,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(partyData[i].lvl), fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
             }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
@@ -1869,7 +1869,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(partyData[i].lvl), fixedIV, TRUE, personalityValue, 2, 0);
 
                 for (j = 0; j < MAX_MON_MOVES; j++)
                 {
@@ -1887,7 +1887,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(partyData[i].lvl), fixedIV, TRUE, personalityValue, 2, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
@@ -1901,7 +1901,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, GetCurveFactor(), fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, GetCurveFactor(partyData[i].lvl), fixedIV, TRUE, personalityValue, 2, 0);
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
@@ -5812,13 +5812,14 @@ static const u32 gLevelCurveTimeTable[] =
     66960
 };
 
-static u8 GetCurveFactor(void)
+static u8 GetCurveFactor(u8 level)
 {
     u8 i = 0;
 		u32 PlaySeconds;
 		u8 CountBadge = 0;
 		u8 value;
 		u8 Hardness;
+
 
 		if (FlagGet(FLAG_BADGE01_GET))
 			CountBadge++;
@@ -5853,5 +5854,8 @@ static u8 GetCurveFactor(void)
     else
         value = i + Random() % 5;
 
-		return value;
+    if (FlagGet(FLAG_TOGGLE_LVL_CURVE))
+		  return value;
+    else
+      return level;
 }

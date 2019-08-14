@@ -60,7 +60,7 @@ AtroposKohlrabiSecretGarden_EventScript6::
 	applymovement 1, movement_AtroposKohlrabiSecretGarden6
 	waitmovement 0
 	msgbox Text_AtroposKohlrabiSecretGarden4, MSGBOX_DEFAULT
-	setvar VAR_RESCUE_VIVIAN, 2
+	setvar VAR_RESCUE_VIVIAN_STATE, 2
 	setflag FLAG_RESCUE_VIVIAN
 	clearflag FLAG_HIDE_VIVIAN
 	setflag FLAG_SYS_POKEMON_GET

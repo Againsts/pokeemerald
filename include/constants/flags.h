@@ -45,7 +45,7 @@
 #define FLAG_HIDE_VIVAIN_OP  0x25 // SB Flag
 #define FLAG_HIDE_VIVIAN_OUTSIDE    0x26 // SB Flag
 #define FLAG_TOGGLE_LVL_CURVE    0x27 // SB Flag
-#define FLAG_UNUSED_0x028    0x28 // SB Flag
+#define FLAG_TOOGLE_DYNAMIC_WILD    0x28 // SB Flag
 #define FLAG_UNUSED_0x029    0x29 // SB Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag

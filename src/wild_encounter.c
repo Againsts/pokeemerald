@@ -40,7 +40,6 @@ static bool8 IsAbilityAllowingEncounter(u8 level);
 static u8 GetWildCurveFactor(void);
 static u16 GetEvoSpecies(u16 species, u8 level);
 static u16 SeedGenerateSpeciesLand(u8 headerid, u8 rarity, u8 level);
-static void GenerateSeedFirstTime(void);
 static u16 SeedGenerateSpeciesRockSmash(u8 headerid, u8 rarity, u8 level);
 static u16 SeedGenerateSpeciesWater(u8 headerid, u8 rarity, u8 level);
 
@@ -1454,51 +1453,41 @@ static u16 GetEvoSpecies(u16 species, u8 level)
   return SPECIES_NONE;
 }
 
-static void GenerateSeedFirstTime(void)
-{
-  if(gSaveBlock2Ptr->SeedID1 == 0 && gSaveBlock2Ptr->SeedID2 ==  0 && gSaveBlock2Ptr->SeedID3 ==  0 && gSaveBlock2Ptr->SeedID4 ==  0 &&  gSaveBlock2Ptr->SeedID5 ==  0 && gSaveBlock2Ptr->SeedID6 ==  0)
-      gSaveBlock2Ptr->SeedID1 = Random() % 255;
-      gSaveBlock2Ptr->SeedID2 = Random() % 255;
-      gSaveBlock2Ptr->SeedID3 = Random() % 255;
-      gSaveBlock2Ptr->SeedID4 = Random() % 255;
-      gSaveBlock2Ptr->SeedID5 = Random() % 255;
-      gSaveBlock2Ptr->SeedID6 = Random() % 255;
-}
 
 static u16 SeedGenerateSpeciesLand(u8 headerid, u8 rarity, u8 level)
 {
   u8 pos;
   u16 index;
 
-  GenerateSeedFirstTime();
+  //GenerateSeedFirstTime();
   switch (rarity)
   {
   case 1:
-    pos = (gSaveBlock2Ptr->SeedID1 + headerid) % 41;
+    pos = (gSaveBlock1Ptr->SeedID[0] + headerid) % 41;
     index = Rarity1_list[pos];
     break;
   case 2:
-    pos = (gSaveBlock2Ptr->SeedID2 + headerid) % 65;
+    pos = (gSaveBlock1Ptr->SeedID[1] + headerid) % 65;
     index = Rarity2_list[pos];
     break;
   case 3:
-    pos = (gSaveBlock2Ptr->SeedID3 + headerid) % 72;
+    pos = (gSaveBlock1Ptr->SeedID[2] + headerid) % 72;
     index = Rarity3_list[pos];
     break;
   case 4:
-    pos = (gSaveBlock2Ptr->SeedID4 + headerid) % 55;
+    pos = (gSaveBlock1Ptr->SeedID[3] + headerid) % 55;
     index = Rarity4_list[pos];
     break;
   case 5:
-    pos = (gSaveBlock2Ptr->SeedID5 + headerid) % 23;
+    pos = (gSaveBlock1Ptr->SeedID[4] + headerid) % 23;
     index = Rarity5_list[pos];
     break;
   case 6:
-    pos = (gSaveBlock2Ptr->SeedID6 + headerid) % 31;
+    pos = (gSaveBlock1Ptr->SeedID[5] + headerid) % 31;
     index = Rarity6_list[pos];
     //Increment if detect caught flag
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(index), FLAG_GET_CAUGHT) == TRUE)
-        pos = (gSaveBlock2Ptr->SeedID5 + headerid) % 23;
+        pos = (gSaveBlock1Ptr->SeedID[4] + headerid) % 23;
         index = Rarity5_list[pos];
     break;
   default:
@@ -1645,19 +1634,19 @@ static u16 SeedGenerateSpeciesRockSmash(u8 headerid, u8 rarity, u8 level)
   u8 pos;
   u16 index;
 
-  GenerateSeedFirstTime();
+  //GenerateSeedFirstTime();
   switch (rarity)
   {
   case 1:
-    pos = (gSaveBlock2Ptr->SeedID1 + headerid) % 38;
+    pos = (gSaveBlock1Ptr->SeedID[0] + headerid) % 38;
     index = Rarity1_rs_list[pos];
     break;
   case 2:
-    pos = (gSaveBlock2Ptr->SeedID2 + headerid) % 38;
+    pos = (gSaveBlock1Ptr->SeedID[1] + headerid) % 38;
     index = Rarity2_rs_list[pos];
     break;
   case 3:
-    pos = (gSaveBlock2Ptr->SeedID3 + headerid) % 38;
+    pos = (gSaveBlock1Ptr->SeedID[2] + headerid) % 38;
     index = Rarity3_rs_list[pos];
     break;
   default:
@@ -1762,19 +1751,19 @@ static u16 SeedGenerateSpeciesWater(u8 headerid, u8 rarity, u8 level)
   u8 pos;
   u16 index;
 
-  GenerateSeedFirstTime();
+  //GenerateSeedFirstTime();
   switch (rarity)
   {
   case 1:
-    pos = (gSaveBlock2Ptr->SeedID4 + headerid) % 24;
+    pos = (gSaveBlock1Ptr->SeedID[3] + headerid) % 24;
     index = Rarity1_w_list[pos];
     break;
   case 2:
-    pos = (gSaveBlock2Ptr->SeedID5 + headerid) % 24;
+    pos = (gSaveBlock1Ptr->SeedID[4] + headerid) % 24;
     index = Rarity2_w_list[pos];
     break;
   case 3:
-    pos = (gSaveBlock2Ptr->SeedID6 + headerid) % 24;
+    pos = (gSaveBlock1Ptr->SeedID[5] + headerid) % 24;
     index = Rarity3_w_list[pos];
     break;
   default:

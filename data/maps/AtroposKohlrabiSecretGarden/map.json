@@ -17,7 +17,7 @@
             "elevation": 0,
             "script": "AtroposKohlrabiSecretGarden_EventScript1",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "1",
             "x": 13,
             "y": 19
@@ -26,7 +26,7 @@
             "elevation": 0,
             "script": "AtroposKohlrabiSecretGarden_EventScript1",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "1",
             "x": 12,
             "y": 19
@@ -35,7 +35,7 @@
             "elevation": 0,
             "script": "AtroposKohlrabiSecretGarden_EventScript3",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "1",
             "x": 11,
             "y": 14
@@ -44,7 +44,7 @@
             "elevation": 0,
             "script": "AtroposKohlrabiSecretGarden_EventScript3",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "1",
             "x": 10,
             "y": 15
@@ -53,7 +53,7 @@
             "elevation": 0,
             "script": "AtroposKohlrabiSecretGarden_EventScript3",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "1",
             "x": 9,
             "y": 14

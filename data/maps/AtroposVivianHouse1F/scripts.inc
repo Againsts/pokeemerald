@@ -3,7 +3,7 @@ AtroposVivianHouse1F_MapScripts::
 	.byte 0
 
 AtroposVivianHouse1F_MapScript1:
-	map_script_2 VAR_RESCUE_VIVIAN, 2, AtroposVivianHouse1F_EventScript3
+	map_script_2 VAR_RESCUE_VIVIAN_STATE, 2, AtroposVivianHouse1F_EventScript3
 	.2byte 0
 
 AtroposVivianHouse1F_EventScript3::
@@ -11,7 +11,7 @@ AtroposVivianHouse1F_EventScript3::
  turnobject 2, 3
  turnobject EVENT_OBJ_ID_PLAYER, 4
  msgbox Text_AtroposVivianHouse1F_3, MSGBOX_AUTOCLOSE
- setvar VAR_RESCUE_VIVIAN, 3
+ setvar VAR_RESCUE_VIVIAN_STATE, 3
  setflag FLAG_TEXTBOX_MIDDLE_BLACK
  setflag FLAG_HIDE_VIVIAN
  clearflag FLAG_HIDE_VIVIAN_OUTSIDE
@@ -22,7 +22,7 @@ AtroposVivianHouse1F_EventScript3::
 AtroposVivianHouse1F_EventScript1::
  lock
  faceplayer
- compare VAR_RESCUE_VIVIAN, 0
+ compare VAR_RESCUE_VIVIAN_STATE, 0
  goto_if_eq AtroposVivianHouse1F_EventScript2
  msgbox Text_AtroposVivianHouse1F_1, MSGBOX_AUTOCLOSE
  release
@@ -30,7 +30,7 @@ AtroposVivianHouse1F_EventScript1::
 
 AtroposVivianHouse1F_EventScript2::
  msgbox Text_AtroposVivianHouse1F_2, MSGBOX_NPC
- setvar VAR_RESCUE_VIVIAN, 1
+ setvar VAR_RESCUE_VIVIAN_STATE, 1
  setflag FLAG_HIDE_VIVIAN_OUTSIDE
  end
 

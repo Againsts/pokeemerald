@@ -3,7 +3,7 @@ AtroposKohlrabiGarden_MapScripts::
 	.byte 0
 
 AtroposKohlrabiGarden_MapScript1:
-	map_script_2 VAR_RESCUE_VIVIAN, 3, AtroposKohlrabiGarden_EventScript9
+	map_script_2 VAR_RESCUE_VIVIAN_STATE, 3, AtroposKohlrabiGarden_EventScript9
 	.2byte 0
 
 AtroposKohlrabiGarden_EventScript1::
@@ -24,14 +24,14 @@ AtroposKohlrabiGarden_EventScript9::
  applymovement 3, movement_AtroposKohlrabiGarden3
  waitmovement 0
  setflag FLAG_HIDE_VIVIAN_OUTSIDE
- setvar VAR_RESCUE_VIVIAN, 4
+ setvar VAR_RESCUE_VIVIAN_STATE, 4
+ special GenerateSeedFirstTime
  release
  end
 
 AtroposKohlrabiGarden_EventScript2::
  applymovement EVENT_OBJ_ID_PLAYER, movement_AtroposKohlrabiGarden1
  waitmovement 0
- setvar VAR_RESCUE_VIVIAN, 4
  release
  end
 

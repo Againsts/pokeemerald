@@ -11,7 +11,7 @@
             "elevation": 0,
             "script": "AtroposVivianHouse1F_EventScript4",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "0",
             "x": 3,
             "y": 8
@@ -20,7 +20,7 @@
             "elevation": 0,
             "script": "AtroposVivianHouse1F_EventScript4",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "0",
             "x": 4,
             "y": 8
@@ -29,7 +29,7 @@
             "elevation": 0,
             "script": "AtroposVivianHouse1F_EventScript4",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "0",
             "x": 2,
             "y": 8
@@ -38,7 +38,7 @@
             "elevation": 0,
             "script": "AtroposVivianHouse1F_EventScript4",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "0",
             "x": 1,
             "y": 8
@@ -47,7 +47,7 @@
             "elevation": 0,
             "script": "AtroposVivianHouse1F_EventScript4",
             "type": "trigger",
-            "var": "VAR_RESCUE_VIVIAN",
+            "var": "VAR_RESCUE_VIVIAN_STATE",
             "var_value": "0",
             "x": 0,
             "y": 8
