@@ -4312,10 +4312,8 @@ void NamingScreen(void)
 
 void GenerateSeedFirstTime(void)
 {
-      gSaveBlock1Ptr->SeedID[0] = Random() % 255;
-      gSaveBlock1Ptr->SeedID[1] = Random() % 255;
-      gSaveBlock1Ptr->SeedID[2] = Random() % 255;
-      gSaveBlock1Ptr->SeedID[3] = Random() % 255;
-      gSaveBlock1Ptr->SeedID[4] = Random() % 255;
-      gSaveBlock1Ptr->SeedID[5] = Random() % 255;
+  int i;
+  for (i = 0; i < 6; i++)
+      gSaveBlock2Ptr->SeedID[i] = Random() % 255;
+
 }

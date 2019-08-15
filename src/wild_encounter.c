@@ -14,6 +14,8 @@
 #include "roamer.h"
 #include "tv.h"
 #include "link.h"
+#include "palette.h"
+#include "rtc.h"
 #include "script.h"
 #include "battle_debug.h"
 #include "battle_pike.h"
@@ -24,6 +26,9 @@
 #include "constants/layouts.h"
 #include "constants/maps.h"
 #include "constants/species.h"
+
+
+
 
 extern const u8 EventScript_RepelWoreOff[];
 
@@ -42,6 +47,7 @@ static u16 GetEvoSpecies(u16 species, u8 level);
 static u16 SeedGenerateSpeciesLand(u8 headerid, u8 rarity, u8 level);
 static u16 SeedGenerateSpeciesRockSmash(u8 headerid, u8 rarity, u8 level);
 static u16 SeedGenerateSpeciesWater(u8 headerid, u8 rarity, u8 level);
+static bool8 TryGetAbilityInfluencedWildMonIndexSWSB(u8 headerID, u8 type, u8 ability, u8 *monIndex);
 
 // EWRAM vars
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
@@ -491,20 +497,21 @@ static bool8 TryGenerateWildMonSWSB(const struct WildPokemonInfo *wildMonInfo, u
     u8 wildMonIndex = 0;
     u8 level;
     u16 speciesID;
+    u8 hour = Rtc_GetCurrentHour();
 
     switch (area)
     {
     case WILD_AREA_LAND:
-        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex))
+        if (TryGetAbilityInfluencedWildMonIndexSWSB(headerID, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex))
             break;
-        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex))
+        if (TryGetAbilityInfluencedWildMonIndexSWSB(headerID, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex))
             break;
 
         wildMonIndex = ChooseWildMonIndex_Land_SWSB();
         speciesID = SeedGenerateSpeciesLand(headerID, wildMonIndex, level);
         break;
     case WILD_AREA_WATER:
-        if (TryGetAbilityInfluencedWildMonIndex(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex))
+        if (TryGetAbilityInfluencedWildMonIndexSWSB(headerID, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex))
             break;
         wildMonIndex = ChooseWildMonIndex_WaterRockSWSB();
         speciesID = SeedGenerateSpeciesWater(headerID, wildMonIndex, level);
@@ -520,6 +527,26 @@ static bool8 TryGenerateWildMonSWSB(const struct WildPokemonInfo *wildMonInfo, u
         return FALSE;
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_RANDOM_ROOM3 && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
+
+    //Night Exclusive
+
+    if (gBaseStats[speciesID].type1 == TYPE_GHOST
+      || gBaseStats[speciesID].type2 == TYPE_GHOST
+      || gBaseStats[speciesID].type1 == TYPE_DARK
+      || gBaseStats[speciesID].type2 == TYPE_DARK)
+    {
+        if (GetTimeLapse(hour) == TIME_MIDNIGHT
+        || GetTimeLapse(hour) == TIME_NIGHT
+        || GetTimeLapse(hour) == TIME_NIGHTFALL)
+        {
+          CreateWildMon(speciesID, level);
+          return TRUE;
+        }
+        else
+        {
+          return FALSE;
+        }
+    }
 
     CreateWildMon(speciesID, level);
     return TRUE;
@@ -734,7 +761,7 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
             }
             else // try a regular surfing encounter
             {
-                if (TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                if (TryGenerateWildMonSWSB(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE, headerId) == TRUE)
                 {
                     BattleSetup_StartWildBattle();
                     return TRUE;
@@ -761,7 +788,7 @@ void RockSmashWildEncounter(void)
             gSpecialVar_Result = FALSE;
         }
         else if (DoWildEncounterRateTest(wildPokemonInfo->encounterRate, 1) == TRUE
-         && TryGenerateWildMon(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE, headerId)
+         && TryGenerateWildMonSWSB(wildPokemonInfo, 2, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE, headerId) == TRUE)
         {
             BattleSetup_StartWildBattle();
             gSpecialVar_Result = TRUE;
@@ -823,7 +850,7 @@ bool8 SweetScentWildEncounter(void)
             if (DoMassOutbreakEncounterTest() == TRUE)
                 SetUpMassOutbreakEncounter(0);
             else
-                TryGenerateWildMon(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0);
+                TryGenerateWildMonSWSB(gWildMonHeaders[headerId].landMonsInfo, WILD_AREA_LAND, 0, headerId);
 
             BattleSetup_StartWildBattle();
             return TRUE;
@@ -841,7 +868,7 @@ bool8 SweetScentWildEncounter(void)
                 return TRUE;
             }
 
-            TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, 0);
+            TryGenerateWildMonSWSB(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, 0, headerId);
             BattleSetup_StartWildBattle();
             return TRUE;
         }
@@ -1027,6 +1054,40 @@ static bool8 TryGetAbilityInfluencedWildMonIndex(const struct WildPokemon *wildM
         return FALSE;
 
     return TryGetRandomWildMonIndexByType(wildMon, type, LAND_WILD_COUNT, monIndex);
+}
+
+static bool8 TryGetRandomWildMonIndexByTypeSWSB(u8 headerID, u8 type, u8 numMon, u8 *monIndex)
+{
+    u8 validIndexes[numMon]; // variable length array, an interesting feature
+    u8 i, validMonCount;
+
+    for (i = 0; i < numMon; i++)
+        validIndexes[i] = 0;
+
+    for (validMonCount = 0, i = 0; i < numMon; i++)
+    {
+
+        if (gBaseStats[SeedGenerateSpeciesLand(headerID, i, GetWildCurveFactor())].type1 == type || gBaseStats[SeedGenerateSpeciesLand(headerID, i, GetWildCurveFactor())].type2 == type)
+            validIndexes[validMonCount++] = i;
+    }
+
+    if (validMonCount == 0 || validMonCount == numMon)
+        return FALSE;
+
+    *monIndex = validIndexes[Random() % validMonCount];
+    return TRUE;
+}
+
+static bool8 TryGetAbilityInfluencedWildMonIndexSWSB(u8 headerID, u8 type, u8 ability, u8 *monIndex)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
+        return FALSE;
+    else if (GetMonAbility(&gPlayerParty[0]) != ability)
+        return FALSE;
+    else if (Random() % 2 != 0)
+        return FALSE;
+
+    return TryGetRandomWildMonIndexByTypeSWSB(headerID, type, 5, monIndex);
 }
 
 static void ApplyFluteEncounterRateMod(u32 *encRate)
@@ -1468,31 +1529,31 @@ static u16 SeedGenerateSpeciesLand(u8 headerid, u8 rarity, u8 level)
   switch (rarity)
   {
   case 1:
-    pos = (gSaveBlock1Ptr->SeedID[0] + headerid) % 41;
+    pos = (gSaveBlock2Ptr->SeedID[0] + headerid) % 41;
     index = Rarity1_list[pos];
     break;
   case 2:
-    pos = (gSaveBlock1Ptr->SeedID[1] + headerid) % 65;
+    pos = (gSaveBlock2Ptr->SeedID[1] + headerid) % 65;
     index = Rarity2_list[pos];
     break;
   case 3:
-    pos = (gSaveBlock1Ptr->SeedID[2] + headerid) % 72;
+    pos = (gSaveBlock2Ptr->SeedID[2] + headerid) % 72;
     index = Rarity3_list[pos];
     break;
   case 4:
-    pos = (gSaveBlock1Ptr->SeedID[3] + headerid) % 55;
+    pos = (gSaveBlock2Ptr->SeedID[3] + headerid) % 55;
     index = Rarity4_list[pos];
     break;
   case 5:
-    pos = (gSaveBlock1Ptr->SeedID[4] + headerid) % 23;
+    pos = (gSaveBlock2Ptr->SeedID[4] + headerid) % 23;
     index = Rarity5_list[pos];
     break;
   case 6:
-    pos = (gSaveBlock1Ptr->SeedID[5] + headerid) % 31;
+    pos = (gSaveBlock2Ptr->SeedID[5] + headerid) % 31;
     index = Rarity6_list[pos];
     //Increment if detect caught flag
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(index), FLAG_GET_CAUGHT) == TRUE)
-        pos = (gSaveBlock1Ptr->SeedID[4] + headerid) % 23;
+        pos = (gSaveBlock2Ptr->SeedID[4] + headerid) % 23;
         index = Rarity5_list[pos];
     break;
   default:
@@ -1643,15 +1704,15 @@ static u16 SeedGenerateSpeciesRockSmash(u8 headerid, u8 rarity, u8 level)
   switch (rarity)
   {
   case 1:
-    pos = (gSaveBlock1Ptr->SeedID[0] + headerid) % 38;
+    pos = (gSaveBlock2Ptr->SeedID[0] + headerid) % 38;
     index = Rarity1_rs_list[pos];
     break;
   case 2:
-    pos = (gSaveBlock1Ptr->SeedID[1] + headerid) % 38;
+    pos = (gSaveBlock2Ptr->SeedID[1] + headerid) % 38;
     index = Rarity2_rs_list[pos];
     break;
   case 3:
-    pos = (gSaveBlock1Ptr->SeedID[2] + headerid) % 38;
+    pos = (gSaveBlock2Ptr->SeedID[2] + headerid) % 38;
     index = Rarity3_rs_list[pos];
     break;
   default:
@@ -1760,15 +1821,15 @@ static u16 SeedGenerateSpeciesWater(u8 headerid, u8 rarity, u8 level)
   switch (rarity)
   {
   case 1:
-    pos = (gSaveBlock1Ptr->SeedID[3] + headerid) % 24;
+    pos = (gSaveBlock2Ptr->SeedID[3] + headerid) % 24;
     index = Rarity1_w_list[pos];
     break;
   case 2:
-    pos = (gSaveBlock1Ptr->SeedID[4] + headerid) % 24;
+    pos = (gSaveBlock2Ptr->SeedID[4] + headerid) % 24;
     index = Rarity2_w_list[pos];
     break;
   case 3:
-    pos = (gSaveBlock1Ptr->SeedID[5] + headerid) % 24;
+    pos = (gSaveBlock2Ptr->SeedID[5] + headerid) % 24;
     index = Rarity3_w_list[pos];
     break;
   default:
